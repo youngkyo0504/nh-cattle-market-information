@@ -39,7 +39,51 @@ interface ILineArticleList {
 }
 const LineArticleList = ({ data }: ILineArticleList) => {
   return (
-    <></>
+    <>
+      <div className="flex flex-col">
+        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div className="inline-block py-2 min-w-full sm:px-6 lg:px-8">
+            <div className="overflow-hidden ">
+              <table className="min-w-full text-left">
+                <tbody>
+                  {data.data.map((cow, index) => (
+                    <tr className=" bg-white  ">
+                      <td className="text-blue-900 py-2 px-6 text-sm font-medium whitespace-nowrap dark:text-white">
+                        {index + 1}
+                      </td>
+                      <td className="py-2 px-6 text-sm font-medium text-gray-600 whitespace-nowrap dark:text-white">
+                        {cow.id}
+                      </td>
+                      <td
+                        className={
+                          "py-2 px-6 text-sm font-medium text-gray-600  whitespace-nowrap dark:text-white"
+                        }
+                      >
+                        {cow.marketName}
+                      </td>
+                      <td
+                        className={
+                          (cow.sex === "암"
+                            ? "text-pink-500 "
+                            : "text-blue-500 ") +
+                          "py-2 px-6 text-sm font-medium  whitespace-nowrap dark:text-white"
+                        }
+                      >
+                        {cow.sex}
+                      </td>
+                      <td className="py-2 px-6 text-sm text-red-500 whitespace-nowrap dark:text-gray-400 last:text-right">
+                        {cow.price}
+                      </td>
+                    </tr>
+                  ))}
+                  {/* Product 1 */}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>{" "}
+    </>
     // <StyledLineArticleList>
     //   <li>
     //     {data.data.map((item, index) => (

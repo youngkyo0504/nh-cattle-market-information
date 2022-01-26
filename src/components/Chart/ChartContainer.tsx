@@ -1,7 +1,7 @@
 import React from "react";
-// import Highcharts from "highcharts";
-// import MinimalChart from "./MinimalChart";
-// import minimalData from "../../datas/minimalData";
+import Highcharts from "highcharts";
+import MinimalChart from "./MinimalChart";
+import minimalData from "../../datas/minimalData";
 // import styled from "styled-components";
 // import { cowStockOptions } from "../../datas";
 
@@ -11,11 +11,10 @@ import React from "react";
 
 const ChartContainer = ({ data }: { data: Highcharts.Options }) => {
   return (
-    <></>
-    // <Wrapper>
-    //   <MinimalChart highcharts={Highcharts} options={data} />
-    // </Wrapper>
+    <div className="px-7 pb-[18px]">
+      <MinimalChart highcharts={Highcharts} options={data} />
+    </div>
   );
 };
 
-// export default ChartContainer;
+export default ChartContainer;
