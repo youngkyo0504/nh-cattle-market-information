@@ -83,8 +83,26 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
       return true;
     }
   };
-
   private getCowStockOptions({ areaData, lineData }: cowData): Options {
+    return {
+      title: {
+        text: "",
+      },
+      chart: {
+        height: "300px",
+      },
+      rangeSelector:{
+
+      },
+      series: [
+        {
+          type: "line",
+          data: lineData,
+        },
+      ],
+    };
+  }
+  private getMinimalCowStockOptions({ areaData, lineData }: cowData): Options {
     return {
       plotOptions: {
         series: {
