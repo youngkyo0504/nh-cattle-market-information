@@ -1,5 +1,3 @@
 import { Options } from "highcharts";
 
-export default interface HighchartOptionMaker {
-  getData(): Options;
-}
+export default interface HighchartOptionMaker {}

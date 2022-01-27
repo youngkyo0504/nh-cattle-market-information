@@ -3,6 +3,7 @@ import carcassPrices from "../../datas/heifer.json";
 import { IPriceData } from "../../@types";
 import getCowStockOptions from "../../datas/cowData";
 import Highcharts, { Options } from "highcharts";
+import HighStockSeriesData from "../../@types/HighStockSeriesData";
 
 interface cowData {
   // 타입을 다시설정한다.
@@ -21,88 +22,86 @@ interface cowData {
 }
 // singletone pattern
 export default class HighchartCowOptionMaker implements HighchartOptionMaker {
-  private static instance: HighchartOptionMaker;
+  private static instance: HighchartCowOptionMaker;
   private constructor() {}
 
-  static getInstance(): HighchartOptionMaker {
+  static getInstance(): HighchartCowOptionMaker {
     return this.instance || (this.instance = new this());
   }
-  private divideIntoLastYearAndThisYear() {
-    const YEAR = 86400000 * 365;
-    const today = carcassPrices[0].date[0] * 1000;
-    const lastYearToday = today - YEAR;
-    const twoYearsAgoToday = lastYearToday - YEAR;
-    const thisYearPriceData: number[][] = [];
-    const lastYearPriceData: number[][] = [];
 
-    carcassPrices //의존적이다. 빼야됨
-      .reverse()
-      .forEach((priceData) => {
-        if (this.isValid(priceData)) {
-          const { day, price } = this.getPriceAndDate(priceData);
-          if (day > lastYearToday) {
-            thisYearPriceData.push([day, price]);
-          } else if (day > twoYearsAgoToday) {
-            lastYearPriceData.push([day + YEAR, price]);
-          }
-        }
-      });
-
-    return { thisYearPriceData, lastYearPriceData };
-  }
-
-  private getPriceAndDate(
-    priceData:
-      | { date: number[]; 암송아지: number[] }
-      | { date: number[]; 암송아지: string[] }
-  ) {
-    const day = priceData.date[0] * 1000;
-    const price = Number(priceData["암송아지"][0]);
-    return { day, price };
-  }
-
-  public getData() {
-    //*올해와 작년의 데이터가 반환된다.
-    const { thisYearPriceData, lastYearPriceData } =
-      this.divideIntoLastYearAndThisYear();
-    const cowData = {
-      areaData: lastYearPriceData,
-      lineData: thisYearPriceData,
-    };
-    const cowStockOption = this.getCowStockOptions(cowData);
-    console.log(cowStockOption);
-    return cowStockOption;
-  }
-
-  private isValid = (priceData: IPriceData) => {
-    if (
-      String(priceData["date"][0]) !== "NA" &&
-      priceData["암송아지"][0] !== "NA" &&
-      priceData["암송아지"][0] !== 0
-    ) {
-      return true;
-    }
-  };
-  private getCowStockOptions({ areaData, lineData }: cowData): Options {
+  public getCowStockOptions({
+    lastYearData,
+    thisYearData,
+  }: HighStockSeriesData): Options {
     return {
       title: {
         text: "",
       },
+      navigator: {
+        enabled: false,
+      },
+      scrollbar: {
+        enabled: false,
+      },
       chart: {
         height: "300px",
       },
-      rangeSelector:{
+      rangeSelector: {
+        inputEnabled: false,
+        buttonPosition: {
+          align: "right",
+          x: 0,
+          y: 0,
+        },
 
+        buttons: [
+          {
+            type: "month",
+            count: 1,
+            text: "한달",
+            title: "View 1 month",
+          },
+          {
+            type: "month",
+            count: 3,
+            text: "3개월",
+            title: "View 3 months",
+          },
+          {
+            type: "month",
+            count: 6,
+            text: "6개월",
+            title: "View 6 months",
+          },
+
+          {
+            type: "year",
+            count: 1,
+            text: "년",
+            title: "년",
+          },
+          {
+            type: "all",
+            text: "전체",
+            title: "View all",
+          },
+        ],
+        // 한달 , 두달 씩 끊어서 보는 것
       },
       series: [
         {
+          color: "rgb(30 58 138)",
           type: "line",
-          data: lineData,
+          data: thisYearData,
         },
       ],
     };
   }
-  private getMinimalCowStockOptions({ areaData, lineData }: cowData): Options {
+
+  public getMinimalCowStockOptions({
+    lastYearData,
+    thisYearData,
+  }: HighStockSeriesData): Options {
     return {
       plotOptions: {
         series: {
@@ -207,21 +206,26 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
         split: false,
       },
       chart: {
-        width: 272, //전체 차트 넓이를나타낸다.
-        height: 112,
+        // width //전체 차트 넓이를나타낸다.
+
+        height: "300px",
         borderColor: "#c8c8c8",
         borderWidth: 0.5,
-        spacingBottom: 0,
-        spacingTop: 0,
-        spacingLeft: 0,
-        spacingRight: 0,
+        spacingBottom: 30,
+        spacingTop: 30,
+        spacingLeft: 30,
+        spacingRight: 30,
+        style: { pading: "100px" },
+        className: "kyoyoung",
       },
-
+      lang: {
+        rangeSelectorZoom: "",
+      },
       navigator: { enabled: false },
       scrollbar: { enabled: false },
       series: [
         {
-          data: areaData, //lastyear
+          data: lastYearData, //HighStockSeriesData
           lineWidth: 1,
           type: "area", //가격이 밑에 남는 것 색깔이 중요한듯..
           gapSize: 5,
@@ -254,7 +258,7 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
           },
         },
         {
-          data: lineData, //this year
+          data: thisYearData, //this year
           lineWidth: 1,
           showCheckbox: true,
           type: "line",
