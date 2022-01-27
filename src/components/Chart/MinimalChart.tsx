@@ -15,4 +15,4 @@ const MinimalChart = (props: IStockChartProps) => (
     options={props.options}
   />
 );
-// export default MinimalChart;
+export default MinimalChart;

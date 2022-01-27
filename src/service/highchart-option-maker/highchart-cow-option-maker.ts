@@ -83,8 +83,26 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
       return true;
     }
   };
-
   private getCowStockOptions({ areaData, lineData }: cowData): Options {
+    return {
+      title: {
+        text: "",
+      },
+      chart: {
+        height: "300px",
+      },
+      rangeSelector:{
+
+      },
+      series: [
+        {
+          type: "line",
+          data: lineData,
+        },
+      ],
+    };
+  }
+  private getMinimalCowStockOptions({ areaData, lineData }: cowData): Options {
     return {
       plotOptions: {
         series: {
@@ -240,7 +258,8 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
           lineWidth: 1,
           showCheckbox: true,
           type: "line",
-          color: "#edacb1",
+          // color: "#edacb1",
+          color: "rgb(30 58 138)",
           name: "송아지 가격",
           id: "cattle",
           description: "소 가격",

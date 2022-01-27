@@ -6,7 +6,9 @@
 // import { useState } from "react";
 // import Pagination from "react-js-pagination";
 
-import { ArticleData } from "../../@types";
+import { ArticleData, CowInfo } from "../../@types";
+import LineArticleHead from "./LineArticleHead";
+import LineArticleList from "./LineArticleList";
 
 // const LineArticleContainer = styled.div`
 //   ${space}
@@ -62,25 +64,20 @@ import { ArticleData } from "../../@types";
 // const StyledPagination = styled(Pagination)``;
 
 interface ILineArticleProps {
-  data: ArticleData<any>[];
+  data: ArticleData<any>;
 }
 
 const LineArticle = ({ data }: ILineArticleProps) => {
-  // const [page, setPage] = useState<number>(1);
-  // const handlePageChange = (page: number) => {
-    // setPage(page);
-    // console.log(page);
-  // };
-  // const totalPageNumber = data.length;
-
   return (
-    <h1>s</h1>
+    <div className="w-full flex flex-col sm:ml-12 flex-1 mb-3">
+      {/* head */}
+      <LineArticleHead data={data} />
+      {/* list */}
+      <LineArticleList data={data} />
+    </div>
     // <LineArticleContainer>
     //   <LineArticleHead
-    //     data={data[page - 1]}
-    //     handlePageChange={handlePageChange}
-    //     page={page}
-    //     totalPageNumber={totalPageNumber}
+    //     data={data}
     //   />
     //   <LineArticleList data={data[page - 1]} />
     // </LineArticleContainer>
