@@ -1,4 +1,4 @@
-import React, { Props, useRef } from "react";
+import React, { Props, useEffect, useRef } from "react";
 import Highcharts from "highcharts/highstock";
 import { Options } from "highcharts";
 import HighchartsReact from "highcharts-react-official";
@@ -12,11 +12,26 @@ interface IStockChartProps {
   options: Options;
 }
 
-const MinimalChart = (props: IStockChartProps) => (
-  <HighchartsReact
-    highcharts={Highcharts}
-    constructorType="stockChart"
-    options={props.options}
-  />
-);
+const MinimalChart = (props: IStockChartProps) => {
+  const chartRef = useRef<HighchartsReact.RefObject>(null);
+
+  useEffect(() => {
+    const highchartLogoText =
+      chartRef?.current?.container.current?.querySelector(
+        ".highcharts-credits"
+      );
+    if (highchartLogoText) {
+      highchartLogoText.textContent = "";
+    }
+  }, []);
+
+  return (
+    <HighchartsReact
+      ref={chartRef}
+      highcharts={Highcharts}
+      constructorType="stockChart"
+      options={props.options}
+    />
+  );
+};
 export default MinimalChart;

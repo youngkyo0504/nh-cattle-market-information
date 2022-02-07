@@ -53,11 +53,11 @@ const LineArticleList = ({ data }: ILineArticleList) => {
                       </td>
                       <td className="py-2 px-6 text-sm font-medium text-gray-600 whitespace-nowrap dark:text-white">
                         <a
-                          className=" hover:text-blue-700 "
+                          className=" hover:bg-blue-800 hover:text-white border-solid  border-blue-800 text-blue-800  p-2 border-[0.5px] rounded-xl  "
                           target={"#"}
                           href={`https://www.aiak.or.kr/ka_hims/ka_s102.jsp?type=barcode&var=${cow.id}`}
                         >
-                          {cow.id}
+                          {cow.id + " > "}
                         </a>
                       </td>
                       <td

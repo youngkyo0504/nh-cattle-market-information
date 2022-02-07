@@ -6,7 +6,7 @@ import ChartContainer from "../../components/Chart/ChartContainer";
 const TrendGraph = ({ data }: { data: Highcharts.Options }) => {
   return (
     <>
-      <div className="flex md:w-3/6 flex-auto flex-col">
+      <div className="flex lg:w-3/6 flex-auto flex-col">
         {/* // graph head */}
 
         <div className="py-5 px-6 flex justify-between ">

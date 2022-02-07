@@ -1,4 +1,4 @@
-import React, { ReactEventHandler } from "react";
+import React, { ReactEventHandler, useEffect } from "react";
 // import styled from "styled-components/macro";
 // import { flex, FlexboxProps } from "styled-system";
 // import { ContainerProps } from "react-select";
@@ -8,7 +8,7 @@ import React, { ReactEventHandler } from "react";
 //   overflow-x: auto;
 // `;
 
-const Iframe = ({ src, flexNumber }: { src: string; flexNumber: number }) => {
+const Iframe = ({ src, className }: { src: string; className: string }) => {
   const resizeIframe: ReactEventHandler<HTMLIFrameElement> = (event) => {
     const iframeElement = event.currentTarget;
     if (iframeElement.contentWindow) {
@@ -19,15 +19,15 @@ const Iframe = ({ src, flexNumber }: { src: string; flexNumber: number }) => {
 
   return (
     <>
-      {/* <StyledIframe
-        flex={flexNumber}
+      <iframe
+        className={className}
         src={src}
         frameBorder="0"
         scrolling="no"
         onLoad={resizeIframe}
-      ></StyledIframe> */}
+      ></iframe>
     </>
   );
 };
 
-// export default Iframe;
+export default Iframe;

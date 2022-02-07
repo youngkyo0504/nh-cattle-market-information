@@ -34,8 +34,70 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
     thisYearData,
   }: HighStockSeriesData): Options {
     return {
+      xAxis: {
+        type: "datetime",
+        dateTimeLabelFormats: {
+          millisecond: "%H:%M:%S.%L",
+          second: "%H:%M:%S",
+          minute: "%H:%M",
+          hour: "%H:%M",
+          day: "%d %b",
+          week: "%m/%d",
+          month: "%m",
+          year: "%Y",
+        },
+      },
+      yAxis: [
+        {
+          labels: {
+            align: "left",
+            formatter: function () {
+              const valueDividedTo10 = String(Number(this.value) / 10);
+
+              return valueDividedTo10;
+            },
+          },
+          // height: "80%",
+          resize: {
+            enabled: true,
+          },
+        },
+        {
+          // labels: {
+          //   align: "left",
+          // },
+          // top: "80%",
+          // height: "20%",
+          // offset: 0,
+        },
+      ],
       title: {
         text: "",
+      },
+      tooltip: {
+        shared: true,
+        useHTML: true,
+        animation: false,
+        formatter: function () {
+          if (this.points) {
+            return this.points.reduce(function (s, point) {
+              return (
+                s +
+                '<br/><span style="color:' +
+                point.color +
+                ';">\u25CF ' +
+                point.series.name +
+                "</span> " +
+                ": <b>" +
+                point.y / 10 +
+                " 만원</b>"
+              );
+            }, "<b>" + new Date(this.x).toISOString().slice(0, 10) + "</b>");
+          }
+        },
+        enabled: true,
+        xDateFormat: "%y-%m-%y",
+        split: false,
       },
       navigator: {
         enabled: false,
@@ -55,6 +117,7 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
         },
 
         buttons: [
+          // 어떤 버튼을 누르는지에 따라 다릅니다.
           {
             type: "month",
             count: 1,
@@ -90,9 +153,16 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
       },
       series: [
         {
+          name: "수송아지",
           color: "rgb(30 58 138)",
           type: "line",
           data: thisYearData,
+        },
+        {
+          name: "암송아지",
+          color: "red",
+          type: "line",
+          data: lastYearData,
         },
       ],
     };

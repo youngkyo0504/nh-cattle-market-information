@@ -69,7 +69,7 @@ interface ILineArticleProps {
 
 const LineArticle = ({ data }: ILineArticleProps) => {
   return (
-    <div className="w-full flex flex-col sm:ml-12 flex-1 mb-3">
+    <div className="lg:max-w-xl w-full flex flex-col  flex-1 mb-3">
       {/* head */}
       <LineArticleHead data={data} />
       {/* list */}
