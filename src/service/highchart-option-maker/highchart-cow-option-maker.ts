@@ -78,6 +78,7 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
         shared: true,
         useHTML: true,
         animation: false,
+        borderColor: "grey", // TODO 색깔바꾸기
         formatter: function () {
           if (this.points) {
             return this.points.reduce(function (s, point) {
@@ -157,11 +158,22 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
           color: "rgb(30 58 138)",
           type: "line",
           data: thisYearData,
+          // TODO line 굵기나 다른 것 변경 예정
+          states: {
+            inactive: {
+              opacity: 1, // 다른 것이 포커싱되어도 0.5로 opacity동일하게 한다.
+            },
+          },
         },
         {
           name: "암송아지",
           color: "red",
           type: "line",
+          states: {
+            inactive: {
+              opacity: 1, // 다른 것이 포커싱되어도 0.5로 opacity동일하게 한다.
+            },
+          },
           data: lastYearData,
         },
       ],
@@ -254,6 +266,7 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
         shared: true,
         useHTML: true,
         animation: false,
+
         formatter: function () {
           if (this.points) {
             return this.points.reduce(function (s, point) {
