@@ -11,7 +11,7 @@ import minimalData from "../../datas/minimalData";
 
 const ChartContainer = ({ data }: { data: Highcharts.Options }) => {
   return (
-    <div className="px-7 pb-[18px]">
+    <div className=" px-4 pb-[18px] mt-16">
       <MinimalChart highcharts={Highcharts} options={data} />
     </div>
   );

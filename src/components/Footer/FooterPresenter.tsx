@@ -1,10 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <div
-        className=" items-center flex flex-col sm:flex-row place-content-between text-center text-gray-700 p-4"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-      >
+      <div className="bg-gray-light  items-center flex flex-col sm:flex-row place-content-between text-center text-gray-700 p-4">
         <div>
           Copyright © antller. All Rights Reserved
           <a className="text-gray-800" href="https://tailwind-elements.com/">

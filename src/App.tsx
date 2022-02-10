@@ -7,7 +7,7 @@ import Page from "./pages/Page";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/cattle-market-information-center">
       <HeaderContainer />
       <Page />
       <FooterContainer />

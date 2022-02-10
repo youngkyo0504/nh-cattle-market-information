@@ -14,6 +14,7 @@ const MainPage = () => {
       <MainBannerContainer />
       <CattleMarketPriceContainer />
       <CattleMarketQuote />
+
       {/* <CattleCardListContainer /> */}
       {/* <CalfAnalysisContainer /> */}
     </>

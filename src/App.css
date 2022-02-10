@@ -1,4 +1,7 @@
 /* kakaomap css */
+.list-none {
+  list-style: none;
+}
 .customoverlay {
   position: relative;
   bottom: 50px;

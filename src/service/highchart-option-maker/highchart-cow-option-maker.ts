@@ -5,21 +5,6 @@ import getCowStockOptions from "../../datas/cowData";
 import Highcharts, { Options } from "highcharts";
 import HighStockSeriesData from "../../@types/HighStockSeriesData";
 
-interface cowData {
-  // 타입을 다시설정한다.
-  areaData: (
-    | number
-    | Highcharts.PointOptionsObject
-    | [string | number, number | null]
-    | null
-  )[];
-  lineData: (
-    | number
-    | Highcharts.PointOptionsObject
-    | [string | number, number | null]
-    | null
-  )[];
-}
 // singletone pattern
 export default class HighchartCowOptionMaker implements HighchartOptionMaker {
   private static instance: HighchartCowOptionMaker;
@@ -29,71 +14,97 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
     return this.instance || (this.instance = new this());
   }
 
-  public getCowStockOptions({
-    lastYearData,
-    thisYearData,
-  }: HighStockSeriesData): Options {
+  public getCowStockOptions(
+    seriesData: Highcharts.SeriesOptionsType[],
+    unit: string
+  ): Options {
     return {
+      plotOptions: {
+        series: {
+          animation: false,
+          stickyTracking: false, // 마우스가 계속 따라가는 것
+          states: {
+            inactive: {
+              opacity: 1,
+            },
+            hover: {
+              enabled: false,
+              halo: {
+                opacity: 1,
+              },
+            },
+          },
+        },
+      },
       xAxis: {
+        tickLength: 0,
+        lineWidth: 0,
         type: "datetime",
         dateTimeLabelFormats: {
           millisecond: "%H:%M:%S.%L",
           second: "%H:%M:%S",
           minute: "%H:%M",
           hour: "%H:%M",
-          day: "%d %b",
+          day: "%m/%d",
           week: "%m/%d",
           month: "%m",
           year: "%Y",
         },
       },
-      yAxis: [
-        {
-          labels: {
-            align: "left",
-            formatter: function () {
-              const valueDividedTo10 = String(Number(this.value) / 10);
-
-              return valueDividedTo10;
-            },
-          },
-          // height: "80%",
-          resize: {
-            enabled: true,
-          },
+      yAxis: {
+        gridLineWidth: 0,
+        lineWidth: 0,
+        labels: {
+          align: "left",
         },
-        {
-          // labels: {
-          //   align: "left",
-          // },
-          // top: "80%",
-          // height: "20%",
-          // offset: 0,
+        // height: "80%",
+        resize: {
+          enabled: true,
         },
-      ],
+      },
+      // {
+      //   // labels: {
+      //   //   align: "left",
+      //   // },
+      //   // top: "80%",
+      //   // height: "20%",
+      //   // offset: 0,
+      // },
       title: {
         text: "",
       },
       tooltip: {
+        className: "list-none",
         shared: true,
         useHTML: true,
         animation: false,
-        borderColor: "grey", // TODO 색깔바꾸기
+        borderColor: "transparent", // TODO 색깔바꾸기
+        shadow: false,
+        style: {
+          width: 1000,
+
+          "list-style": "none",
+        },
         formatter: function () {
           if (this.points) {
             return this.points.reduce(function (s, point) {
               return (
                 s +
-                '<br/><span style="color:' +
+                '<br/><span class="font-bold" style="color:' +
                 point.color +
-                ';">\u25CF ' +
+                '; ">\u25CF ' +
                 point.series.name +
                 "</span> " +
-                ": <b>" +
-                point.y / 10 +
-                " 만원</b>"
+                "<b>" +
+                point.y +
+                unit +
+                " </b>"
               );
-            }, "<b>" + new Date(this.x).toISOString().slice(0, 10) + "</b>");
+            }, "<b>" +
+              '<span class="font-medium">' +
+              new Date(this.x).toISOString().slice(0, 10) +
+              "</span>" +
+              "</b>");
           }
         },
         enabled: true,
@@ -115,6 +126,24 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
           align: "right",
           x: 0,
           y: 0,
+        },
+        buttonTheme: {
+          fill: "none",
+          states: {
+            hover: {
+              fill: "rgba(0, 70, 142,0.7)",
+              style: {
+                color: "white",
+              },
+            },
+            select: {
+              fill: "#00468E",
+              style: {
+                color: "white",
+              },
+            },
+            // disabled: { ... }
+          },
         },
 
         buttons: [
@@ -153,29 +182,30 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
         // 한달 , 두달 씩 끊어서 보는 것
       },
       series: [
-        {
-          name: "수송아지",
-          color: "rgb(30 58 138)",
-          type: "line",
-          data: thisYearData,
-          // TODO line 굵기나 다른 것 변경 예정
-          states: {
-            inactive: {
-              opacity: 1, // 다른 것이 포커싱되어도 0.5로 opacity동일하게 한다.
-            },
-          },
-        },
-        {
-          name: "암송아지",
-          color: "red",
-          type: "line",
-          states: {
-            inactive: {
-              opacity: 1, // 다른 것이 포커싱되어도 0.5로 opacity동일하게 한다.
-            },
-          },
-          data: lastYearData,
-        },
+        ...seriesData,
+        // {
+        //   name: "수송아지",
+        //   color: "rgb(30 58 138)",
+        //   type: "line",
+        //   data: thisYearData,
+        //   // TODO line 굵기나 다른 것 변경 예정
+        //   states: {
+        //     inactive: {
+        //       opacity: 1, // 다른 것이 포커싱되어도 0.5로 opacity동일하게 한다.
+        //     },
+        //   },
+        // },
+        // {
+        //   name: "암송아지",
+        //   color: "red",
+        //   type: "line",
+        //   states: {
+        //     inactive: {
+        //       opacity: 1, // 다른 것이 포커싱되어도 0.5로 opacity동일하게 한다.
+        //     },
+        //   },
+        //   data: lastYearData,
+        // },
       ],
     };
   }
@@ -187,6 +217,7 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
     return {
       plotOptions: {
         series: {
+          animation: false,
           stickyTracking: false, // 마우스가 계속 따라가는 것
           states: {
             inactive: {
@@ -200,6 +231,20 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
             },
           },
         },
+        // series: {
+        //   stickyTracking: false, // 마우스가 계속 따라가는 것
+        //   states: {
+        //     inactive: {
+        //       opacity: 1,
+        //     },
+        //     hover: {
+        //       enabled: false,
+        //       halo: {
+        //         opacity: 1,
+        //       },
+        //     },
+        //   },
+        // },
         area: {
           gapSize: 100,
           connectNulls: true, // null인 값들 모두 연결할지 말지
@@ -292,7 +337,7 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
         // width //전체 차트 넓이를나타낸다.
 
         height: "300px",
-        borderColor: "#c8c8c8",
+        borderColor: "transparent",
         borderWidth: 0.5,
         spacingBottom: 30,
         spacingTop: 30,
@@ -346,10 +391,11 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
           showCheckbox: true,
           type: "line",
           // color: "#edacb1",
-          color: "rgb(30 58 138)",
+          color: "#edb445",
           name: "송아지 가격",
           id: "cattle",
           description: "소 가격",
+
           animation: {
             duration: 1000,
           },

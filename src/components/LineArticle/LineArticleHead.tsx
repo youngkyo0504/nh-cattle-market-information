@@ -6,8 +6,11 @@ interface LineArticleHeadProps {
 const LineArticleHead = ({ data }: LineArticleHeadProps) => {
   return (
     <>
-      <div className="relative border-gray-300  border-b-[1px] border-solid">
-        <div className="text-blue-900 font-bold py-2 px-3"> {data.title}</div>
+      <div className="relative border-blue  border-b-[1px] border-solid">
+        <div className="text-gray-subtitle font-bold pb-4 px-3 text-4xl">
+          {" "}
+          {data.title}
+        </div>
       </div>
     </>
   );

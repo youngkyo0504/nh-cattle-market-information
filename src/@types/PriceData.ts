@@ -1,5 +1,5 @@
 interface IPriceData {
-  date: number[];
-  암송아지: (number | string)[];
+  date: (number | string)[];
+  price: (number | string)[];
 }
 export default IPriceData;

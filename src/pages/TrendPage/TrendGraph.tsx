@@ -2,25 +2,39 @@ import React from "react";
 import { cowStockOptions } from "../../datas";
 import Highcharts from "highcharts";
 import ChartContainer from "../../components/Chart/ChartContainer";
+import ICowGraphInfo from "../../@types/CowGraphInfo";
 
-const TrendGraph = ({ data }: { data: Highcharts.Options }) => {
+const TrendGraph = ({
+  data,
+  graphInfo,
+}: {
+  data: Highcharts.Options;
+  graphInfo: ICowGraphInfo;
+}) => {
   return (
     <>
-      <div className="flex lg:w-3/6 flex-auto flex-col">
+      <div className="md:first:mr-12 flex lg:w-3/6 flex-auto flex-col">
         {/* // graph head */}
 
-        <div className="py-5 px-6 flex justify-between ">
+        <div className=" px-4 flex justify-between ">
           {/* Title */}
           <div className="flex flex-col">
-            <div className="text-blue-900 font-bold">송아지</div>
-            <div className="text-gray-600 text-xs ">만원/마리 농협 중앙회 </div>
+            <div className="text-gray-subtitle font-bold flex text-4xl ">
+              <span>{graphInfo.name}</span>
+              <span className="text-sm font-normal ml-1.5 text-gray-unit">
+                {graphInfo.unit}
+              </span>
+            </div>
+            <div className=" text-lg pt-[4px] text-gray-info ">
+              {graphInfo.reference}{" "}
+            </div>
           </div>
           {/* changeDown */}
-          <div className="text-red-500 text-right">
-            <div className="text-red-500">491.2</div>
-            <div className="flex text-xs">
-              <div className="text-red-500 ">▾ 52.67</div>
-              <div className="pl-3 ">-0.98%</div>
+          <div className="text-red text-right">
+            <div className="text-4xl">{graphInfo.latestData}</div>
+            <div className="flex text-lg">
+              <div className=" ">▾ {graphInfo.change}</div>
+              <div className="pl-3 ">-{graphInfo.rateOfChagne}%</div>
             </div>
           </div>
         </div>

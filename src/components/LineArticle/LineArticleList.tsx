@@ -1,38 +1,4 @@
 import { ArticleData, CowInfo } from "../../@types";
-// import { color, ColorProps, layout, space } from "styled-system";
-// import ArticleData from "../../@types/ArticleData";
-// import { CowInfo } from "../../@types";
-
-// const StyledLineArticleList = styled.ul`
-//   padding: 25px 15px;
-// `;
-
-// const LineArticleItemOrder = styled.div<ColorProps>`
-//   flex-basis: 20px;
-//   margin-right: 10px;
-//   text-align: center;
-//   ${color}
-// `;
-
-// const LineArticleItem = styled.div`
-//   display: flex;
-//   margin-top: 25px;
-//   &:nth-child(1) {
-//     margin-top: 0px;
-//   }
-// `;
-
-// const LineArticleItemTitle = styled.div`
-//   flex: 1;
-// `;
-// const LineArticleItemChange = styled.div`
-//   flex-basis: 80px;
-//   margin-left: 10px;
-//   text-align: right;
-// `;
-// const Price = styled.span`
-//   color: #d60000 !important ;
-// `;
 
 interface ILineArticleList {
   data: ArticleData<CowInfo>;
@@ -40,20 +6,20 @@ interface ILineArticleList {
 const LineArticleList = ({ data }: ILineArticleList) => {
   return (
     <>
-      <div className="w-full overflow-x-auto flex flex-col">
+      <div className="w-full  flex flex-col">
         <div className=" sm:-mx-6 lg:-mx-8">
-          <div className="inline-block py-2 min-w-full sm:px-6 lg:px-8">
+          <div className="inline-block py-10 min-w-full sm:px-6 lg:px-8">
             <div className=" ">
-              <table className="min-w-full text-left ">
+              <table className="table-auto text-gray-info min-w-full text-left ">
                 <tbody>
                   {data.data.map((cow, index) => (
-                    <tr className=" bg-white  ">
-                      <td className="text-blue-900 py-2 px-6 text-sm font-medium whitespace-nowrap dark:text-white">
+                    <tr className=" bg-white text-3xl h-12  ">
+                      <td className="text-black  pl-6  py-4  font-medium whitespace-nowrap dark:text-white">
                         {index + 1}
                       </td>
-                      <td className="py-2 px-6 text-sm font-medium text-gray-600 whitespace-nowrap dark:text-white">
+                      <td className=" text-xl w-4 pr-6 font-medium text-blue whitespace-nowrap dark:text-white">
                         <a
-                          className=" hover:bg-blue-800 hover:text-white border-solid  border-blue-800 text-blue-800  p-2 border-[0.5px] rounded-xl  "
+                          className=" hover:bg-blue hover:text-white border-solid  border-blue-800 text-blue  px-4 py-2 border-[0.5px] rounded-3xl  "
                           target={"#"}
                           href={`https://www.aiak.or.kr/ka_hims/ka_s102.jsp?type=barcode&var=${cow.id}`}
                         >
@@ -62,22 +28,23 @@ const LineArticleList = ({ data }: ILineArticleList) => {
                       </td>
                       <td
                         className={
-                          "py-2 px-6 text-sm font-medium text-gray-600  whitespace-nowrap dark:text-white"
-                        }
-                      >
-                        {cow.marketName}
-                      </td>
-                      <td
-                        className={
                           (cow.sex === "암"
                             ? "text-pink-500 "
                             : "text-blue-500 ") +
-                          "py-2 px-6 text-sm font-medium  whitespace-nowrap dark:text-white"
+                          " pr-16 text-3xl font-medium  whitespace-nowrap dark:text-white"
                         }
                       >
                         {cow.sex}
                       </td>
-                      <td className="py-2 px-6 text-sm text-red-500 whitespace-nowrap dark:text-gray-400 last:text-right">
+                      <td
+                        className={
+                          " text-3xl font-medium text-gray-600  whitespace-nowrap dark:text-white"
+                        }
+                      >
+                        {cow.marketName}
+                      </td>
+
+                      <td className=" px-6 text-3xl text-red whitespace-nowrap dark:text-gray-400 last:text-right">
                         {cow.price}
                       </td>
                     </tr>
