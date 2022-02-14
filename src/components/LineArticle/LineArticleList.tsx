@@ -14,16 +14,16 @@ const LineArticleList = ({ data }: ILineArticleList) => {
                 <tbody>
                   {data.data.map((cow, index) => (
                     <tr className=" bg-white text-3xl h-12  ">
-                      <td className="text-black  pl-6  py-4  font-medium whitespace-nowrap dark:text-white">
+                      <td className="text-black  pl-6  py-4  font-medium whitespace-nowrap ">
                         {index + 1}
                       </td>
-                      <td className=" text-xl w-4 pr-6 font-medium text-blue whitespace-nowrap dark:text-white">
+                      <td className=" text-xl w-4 pr-6 font-medium text-blue whitespace-nowrap ">
                         <a
                           className=" hover:bg-blue hover:text-white border-solid  border-blue-800 text-blue  px-4 py-2 border-[0.5px] rounded-3xl  "
                           target={"#"}
                           href={`https://www.aiak.or.kr/ka_hims/ka_s102.jsp?type=barcode&var=${cow.id}`}
                         >
-                          {cow.id + " > "}
+                          {cow.id + " >"}
                         </a>
                       </td>
                       <td
@@ -31,20 +31,20 @@ const LineArticleList = ({ data }: ILineArticleList) => {
                           (cow.sex === "암"
                             ? "text-pink-500 "
                             : "text-blue-500 ") +
-                          " pr-16 text-3xl font-medium  whitespace-nowrap dark:text-white"
+                          " pr-16 text-3xl font-medium  whitespace-nowrap "
                         }
                       >
                         {cow.sex}
                       </td>
                       <td
                         className={
-                          " text-3xl font-medium text-gray-600  whitespace-nowrap dark:text-white"
+                          " text-3xl font-medium text-gray-600  whitespace-nowrap "
                         }
                       >
                         {cow.marketName}
                       </td>
 
-                      <td className=" px-6 text-3xl text-red whitespace-nowrap dark:text-gray-400 last:text-right">
+                      <td className="font-medium px-6 text-3xl text-red whitespace-nowrap last:text-right">
                         {cow.price}
                       </td>
                     </tr>

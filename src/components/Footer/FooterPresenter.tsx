@@ -3,7 +3,7 @@ const Footer = () => {
     <footer>
       <div className="bg-gray-light  items-center flex flex-col sm:flex-row place-content-between text-center text-gray-700 p-4">
         <div>
-          Copyright © antller. All Rights Reserved
+          Copyright © antller. All Rights Reserved.
           <a className="text-gray-800" href="https://tailwind-elements.com/">
             antller
           </a>

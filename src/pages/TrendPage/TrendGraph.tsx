@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { cowStockOptions } from "../../datas";
 import Highcharts from "highcharts";
 import ChartContainer from "../../components/Chart/ChartContainer";
@@ -21,19 +21,20 @@ const TrendGraph = ({
           <div className="flex flex-col">
             <div className="text-gray-subtitle font-bold flex text-4xl ">
               <span>{graphInfo.name}</span>
-              <span className="text-sm font-normal ml-1.5 text-gray-unit">
+              <span className="text-sm font-medium ml-1.5 text-gray-unit">
                 {graphInfo.unit}
               </span>
             </div>
-            <div className=" text-lg pt-[4px] text-gray-info ">
+            <div className=" text-lg pt-[4px] font-medium text-gray-info ">
               {graphInfo.reference}{" "}
             </div>
           </div>
           {/* changeDown */}
-          <div className="text-red text-right">
+          <div className="text-red text-right font-bold">
             <div className="text-4xl">{graphInfo.latestData}</div>
             <div className="flex text-lg">
-              <div className=" ">▾ {graphInfo.change}</div>
+              <div className=" ">▼ {graphInfo.change}</div>
+              {/* ▲ */}
               <div className="pl-3 ">-{graphInfo.rateOfChagne}%</div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { ILink } from "../@types/index";
-
+const BASEURL = "/cattle-market-information-center";
 const links: ILink[] = [
   {
     name: "서비스소개",

@@ -2,6 +2,8 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     colors: {
+      "hover-light-blue": "#D8E7EF",
+      "light-blue": "#F3F6F8",
       black: "black",
       transparent: "transparent",
       blue: "#00468E",
@@ -22,6 +24,7 @@ module.exports = {
     },
 
     fontFamily: {
+      spoqa: ["Spoqa Han Sans ", "sans-serif"],
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
     },

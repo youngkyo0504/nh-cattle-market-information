@@ -56,6 +56,7 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
         lineWidth: 0,
         labels: {
           align: "left",
+          style: { letterSpacing: -1 },
         },
         // height: "80%",
         resize: {
@@ -92,7 +93,7 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
                 s +
                 '<br/><span class="font-bold" style="color:' +
                 point.color +
-                '; ">\u25CF ' +
+                '; ">' +
                 point.series.name +
                 "</span> " +
                 "<b>" +
@@ -118,6 +119,7 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
         enabled: false,
       },
       chart: {
+        style: { fontFamily: "Spoqa Han Sans , sans-serif" },
         height: "300px",
       },
       rangeSelector: {
@@ -311,17 +313,16 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
         shared: true,
         useHTML: true,
         animation: false,
-
         formatter: function () {
           if (this.points) {
             return this.points.reduce(function (s, point) {
               return (
                 s +
-                '<br/><span style="color:' +
+                '<br/><p style="color:' +
                 point.color +
-                ';">\u25CF ' +
+                ';">' +
                 point.series.name +
-                "</span> " +
+                "</p> " +
                 ": <b>" +
                 point.y +
                 " 천원</b>"
@@ -332,6 +333,10 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
         enabled: true,
         xDateFormat: "%y-%m-%y",
         split: false,
+        style: {
+          listStyleType: "none",
+        },
+        className: "high-tooltip",
       },
       chart: {
         // width //전체 차트 넓이를나타낸다.

@@ -8,7 +8,7 @@ const CattleMarketQuote = () => {
       <div className=" px-6 flex-col lg:flex-row  flex place-content-between w-full  ">
         {/* title */}
         <div className="px-4 lg:mb-0  mb-8">
-          <div className="text-[2.5rem] text-blue-900 font-extrabold  text-blue text-2xl flex-1 ">
+          <div className="text-[2.5rem]  text-blue-900 font-extrabold  text-blue  flex-1 ">
             <h2>우시장 시세</h2>
           </div>
           <div className="text-gray-info text-lg mt-2.5">
