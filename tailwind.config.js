@@ -31,11 +31,13 @@ module.exports = {
     extend: {
       fontSize: { "7xl": "5rem" },
       maxWidth: {
-        "9xl": "75rem",
+        "9xl": "80rem",
       },
       borderRadius: {
-        "4xl": "2rem",
+        "4xl": "2.2rem",
       },
     },
   },
 };
+
+console.log(JSON.stringify(module.exports));

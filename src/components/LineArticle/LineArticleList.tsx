@@ -7,19 +7,19 @@ const LineArticleList = ({ data }: ILineArticleList) => {
   return (
     <>
       <div className="w-full  flex flex-col">
-        <div className=" sm:-mx-6 lg:-mx-8">
-          <div className="inline-block py-10 min-w-full sm:px-6 lg:px-8">
+        <div>
+          <div className=" py-10 min-w-full overflow-x-auto  ">
             <div className=" ">
-              <table className="table-auto text-gray-info min-w-full text-left ">
+              <table className="table-fixed border-collapse text-gray-info min-w-full text-left ">
                 <tbody>
                   {data.data.map((cow, index) => (
-                    <tr className=" bg-white text-3xl h-12  ">
-                      <td className="text-black  pl-6  py-4  font-medium whitespace-nowrap ">
-                        {index + 1}
+                    <tr className=" bg-white text-[1.25rem] h-12  ">
+                      <td className="text-gray-subtitle  pl-5 pr-12 py-3  font-medium whitespace-nowrap ">
+                        <span>{index + 1}</span>
                       </td>
-                      <td className=" text-xl w-4 pr-6 font-medium text-blue whitespace-nowrap ">
+                      <td className="pr-20 -tracking-[0.5px] text-xl w-4  font-medium text-blue whitespace-nowrap ">
                         <a
-                          className=" hover:bg-blue hover:text-white border-solid  border-blue-800 text-blue  px-4 py-2 border-[0.5px] rounded-3xl  "
+                          className=" hover:bg-blue hover:text-white border-solid  border-blue-800 text-blue pr-[22px] pl-[29px] py-1 border-[0.5px] rounded-3xl   "
                           target={"#"}
                           href={`https://www.aiak.or.kr/ka_hims/ka_s102.jsp?type=barcode&var=${cow.id}`}
                         >
@@ -28,23 +28,20 @@ const LineArticleList = ({ data }: ILineArticleList) => {
                       </td>
                       <td
                         className={
-                          (cow.sex === "암"
-                            ? "text-pink-500 "
-                            : "text-blue-500 ") +
-                          " pr-16 text-3xl font-medium  whitespace-nowrap "
+                          " pr-20 text-[1.25rem] -tracking-[0.5px] font-medium  whitespace-nowrap "
                         }
                       >
                         {cow.sex}
                       </td>
                       <td
                         className={
-                          " text-3xl font-medium text-gray-600  whitespace-nowrap "
+                          " text-[1.25rem] pr-20 -tracking-[0.5px] font-medium text-gray-600  whitespace-nowrap "
                         }
                       >
                         {cow.marketName}
                       </td>
 
-                      <td className="font-medium px-6 text-3xl text-red whitespace-nowrap last:text-right">
+                      <td className="font-medium px-5 text-[1.25rem] text-red whitespace-nowrap last:text-right -tracking-[0.5px]">
                         {cow.price}
                       </td>
                     </tr>

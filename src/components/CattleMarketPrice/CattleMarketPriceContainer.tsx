@@ -92,16 +92,16 @@ const CattleMarketPriceContainer = () => {
   } as ICowGraphInfo;
 
   return (
-    <article className="px-8 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-7xl md:px-24 lg:px-8 lg:pb-20 lg:pt-8">
-      <div className="px-6">
+    <article className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-9xl   lg:pb-20 lg:pt-8">
+      <div>
         <div
           className={
-            "px-4 text-blue font-extrabold text-[2.5rem] border-solid border-b-[1px] border-blue py-4  "
+            " text-blue font-bold text-[2rem] border-solid border-b-[1px] border-blue py-4  "
           }
         >
-          <h2>우시장 가격 정보</h2>
+          <h2 className="px-5">우시장 가격 정보</h2>
         </div>
-        <div className="flex flex-col lg:flex-row mt-10">
+        <div className="flex flex-col lg:flex-row mt-10 px-5">
           <TrendGraph data={minimalOption} graphInfo={cattleGraphInfo} />
           <TrendGraph data={meatPriceOption} graphInfo={cattleGraphInfo} />
         </div>
