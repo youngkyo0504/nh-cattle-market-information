@@ -21,6 +21,8 @@ module.exports = {
       gray: "#8492a6",
       white: "white",
       "gray-light": "#d3dce6",
+      footer: "#f0f0f0",
+      "footer-text": "#4d5864",
     },
 
     fontFamily: {
@@ -29,9 +31,15 @@ module.exports = {
       serif: ["Merriweather", "serif"],
     },
     extend: {
-      fontSize: { "7xl": "5rem" },
+      spacing: { content: "1.625rem" },
+      fontSize: {
+        "7xl": "5rem",
+        title: "1.688rem",
+        subtitle: "1.34rem",
+        table: "0.969rem",
+      },
       maxWidth: {
-        "9xl": "80rem",
+        "9xl": "70rem",
       },
       borderRadius: {
         "4xl": "2.2rem",

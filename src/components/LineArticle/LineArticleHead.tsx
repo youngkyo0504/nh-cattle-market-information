@@ -7,7 +7,7 @@ const LineArticleHead = ({ data }: LineArticleHeadProps) => {
   return (
     <>
       <div className="relative border-blue  border-b-[1px] border-solid">
-        <div className="text-gray-subtitle font-bold pb-4 px-5 text-2xl">
+        <div className="text-gray-subtitle font-bold pb-6 px-12 text-subtitle">
           {" "}
           {data.title}
         </div>

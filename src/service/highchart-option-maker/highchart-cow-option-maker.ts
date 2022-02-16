@@ -341,7 +341,6 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
       chart: {
         // width //전체 차트 넓이를나타낸다.
 
-        height: "300px",
         borderColor: "transparent",
         borderWidth: 0.5,
         spacingBottom: 30,

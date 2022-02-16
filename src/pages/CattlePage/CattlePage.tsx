@@ -6,17 +6,17 @@ const CattlePage = () => {
     <>
       <div className="flex justify-center items-center mt-24">
         <div>
-          <h1 className="font-bold text-3xl mb-12  text-blue">
+          <h1 className="font-bold text-2xl mb-12 px-1.5 text-blue">
             우시장 둘러보기
           </h1>
           <div className="flex flex-col">
-            <div className="border-b justify-between flex text-lg p-2 text-blue  border-blue ">
-              <span>우시장 목록</span> <span>▼</span>
+            <div className="border-b font-medium justify-between flex -tracking-[0.03rem] text-lg px-1.5 pb-3.5 mb-3 text-blue  border-blue ">
+              <span>우시장 목록</span>
             </div>
           </div>
           <ul>
             {Object.values(cattleMarket).map((market) => (
-              <li className="cursor-pointer bg-light-blue hover:bg-hover-light-blue text-blue p-2 ">
+              <li className="cursor-pointer text-gray-nav -tracking-[0.025rem]  hover:text-blue px-1.5 py-2 ">
                 {market.title}
               </li>
             ))}

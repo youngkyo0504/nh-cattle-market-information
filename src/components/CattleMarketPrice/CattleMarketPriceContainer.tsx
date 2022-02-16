@@ -96,12 +96,12 @@ const CattleMarketPriceContainer = () => {
       <div>
         <div
           className={
-            " text-blue font-bold text-[2rem] border-solid border-b-[1px] border-blue py-4  "
+            " text-blue font-bold text-[1.688rem] border-solid border-b-[1px] border-blue py-4  "
           }
         >
-          <h2 className="px-5">우시장 가격 정보</h2>
+          <h2 className="px-content">우시장 가격 정보</h2>
         </div>
-        <div className="flex flex-col lg:flex-row mt-10 px-5">
+        <div className="flex flex-col justify-between lg:flex-row mt-10 px-content">
           <TrendGraph data={minimalOption} graphInfo={cattleGraphInfo} />
           <TrendGraph data={meatPriceOption} graphInfo={cattleGraphInfo} />
         </div>
