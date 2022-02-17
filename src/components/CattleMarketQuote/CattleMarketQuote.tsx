@@ -11,9 +11,7 @@ const CattleMarketQuote = () => {
           <div className="text-title  text-blue-900 font-bold  text-blue  flex-1 ">
             <h2>우시장 시세</h2>
           </div>
-          <div className="text-gray-info text-sm mt-1">
-            2022년 1월 20일 기준
-          </div>
+          <div className="text-gray-info text-sm ">2022년 1월 20일 기준</div>
         </div>
         {/* LineArticle */}
         <div className="max-w-2xl w-full">

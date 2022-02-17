@@ -56,7 +56,7 @@ export default class HighchartCowOptionMaker implements HighchartOptionMaker {
         lineWidth: 0,
         labels: {
           align: "left",
-          style: { letterSpacing: -1 },
+          style: { letterSpacing: -0.3 },
         },
         // height: "80%",
         resize: {

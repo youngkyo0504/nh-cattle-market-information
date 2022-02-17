@@ -18,7 +18,7 @@ const Header = ({ links }: HeaderProps) => {
             className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 "
             to="/"
           >
-            <img className="h-[34px]" src={Logo} alt="" />
+            <img className="h-[42px]" src={Logo} alt="" />
           </Link>
         </div>
         <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
