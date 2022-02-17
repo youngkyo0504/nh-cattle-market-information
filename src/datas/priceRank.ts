@@ -1,7 +1,7 @@
 import ArticleData from "../@types/ArticleData";
 
 const priceRank: ArticleData<Object> = {
-  title: "송아지 가격 top 10",
+  title: "송아지 가격 Top 10",
   date: "2018년 3월 24일",
   data: [
     { id: "002132578653", sex: "수", marketName: "안성축협", price: "513만원" },

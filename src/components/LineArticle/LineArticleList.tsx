@@ -8,7 +8,7 @@ const LineArticleList = ({ data }: ILineArticleList) => {
     <>
       <div className="w-full  flex flex-col">
         <div>
-          <div className=" py-7 min-w-full overflow-x-auto  ">
+          <div className=" py-[1.875rem] min-w-full overflow-x-auto  ">
             <div className=" ">
               <table className="table-fixed border-collapse text-gray-info min-w-full text-left ">
                 <tbody>

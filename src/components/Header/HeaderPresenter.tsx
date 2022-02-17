@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ILink } from "../../@types/index";
 import Logo from "../../assets/woo-logo.png";
 
@@ -18,7 +18,7 @@ const Header = ({ links }: HeaderProps) => {
             className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 "
             to="/"
           >
-            <img className="h-8" src={Logo} alt="" />
+            <img className="h-[34px]" src={Logo} alt="" />
           </Link>
         </div>
         <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
@@ -44,7 +44,7 @@ const Header = ({ links }: HeaderProps) => {
               {links.map((link) => (
                 <li>
                   <Link
-                    className="inline-block no-underline hover:text-black   transition-all ease-in hover:font-bold  hover:decoration-2  px-4"
+                    className="text-[0.95rem] inline-block no-underline hover:text-black   transition-all ease-in hover:font-bold  hover:decoration-2  px-4"
                     to={link.src}
                   >
                     {link.name}
