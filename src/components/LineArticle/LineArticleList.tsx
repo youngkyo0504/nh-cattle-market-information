@@ -14,10 +14,10 @@ const LineArticleList = ({ data }: ILineArticleList) => {
                 <tbody>
                   {data.data.map((cow, index) => (
                     <tr className=" bg-white text-table h-8   ">
-                      <td className="text-gray-subtitle pb-8  pl-12 pr-12   font-medium whitespace-nowrap ">
+                      <td className="text-gray-subtitle pb-[1.5rem]  pl-12 pr-12   font-medium whitespace-nowrap ">
                         <span>{index + 1}</span>
                       </td>
-                      <td className="pr-16 pb-8 -tracking-[0.024rem]  w-4  font-medium text-blue whitespace-nowrap ">
+                      <td className="pr-16 pb-[1.5rem] -tracking-[0.024rem]  w-4  font-medium text-blue whitespace-nowrap ">
                         <a
                           className="transition-all ease-out hover:bg-blue hover:text-white border-solid  border-blue-800 text-blue pr-[21px] pl-[25px] py-1 border-[0.5px] rounded-3xl    "
                           target={"#"}
@@ -28,20 +28,20 @@ const LineArticleList = ({ data }: ILineArticleList) => {
                       </td>
                       <td
                         className={
-                          " pr-16 pb-8  -tracking-[0.5px] font-medium  whitespace-nowrap "
+                          " pr-16 pb-[1.5rem]  -tracking-[0.5px] font-medium  whitespace-nowrap "
                         }
                       >
                         {cow.sex}
                       </td>
                       <td
                         className={
-                          "pb-8   pr-20 -tracking-[0.5px] font-medium text-gray-600  whitespace-nowrap "
+                          "pb-[1.5rem]   pr-20 -tracking-[0.5px] font-medium text-gray-600  whitespace-nowrap "
                         }
                       >
                         {cow.marketName}
                       </td>
 
-                      <td className="pb-8 font-medium pr-8  text-red whitespace-nowrap last:text-right -tracking-[0.5px]">
+                      <td className="pb-[1.5rem] font-medium pr-8  text-red whitespace-nowrap last:text-right -tracking-[0.5px]">
                         {cow.price}
                       </td>
                     </tr>

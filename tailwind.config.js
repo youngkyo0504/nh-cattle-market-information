@@ -22,6 +22,8 @@ module.exports = {
       white: "white",
       "gray-light": "#d3dce6",
       footer: "#f0f0f0",
+      "footer-icon-darker": "#515964",
+      "footer-icon": "#979CA3",
       "footer-text": "#4d5864",
     },
 

@@ -25,7 +25,7 @@ const TrendGraph = ({
                 {graphInfo.unit}
               </span>
             </div>
-            <div className=" text-sm pt-[4px] font-medium text-gray-info  -tracking-[0.43px]">
+            <div className=" text-sm  font-medium text-gray-info  -tracking-[0.43px]">
               {graphInfo.reference}{" "}
             </div>
           </div>

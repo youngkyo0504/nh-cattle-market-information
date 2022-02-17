@@ -10,21 +10,21 @@ const Footer = () => {
         <div className="text-footer-text text-xs pt-2">
           Copyright © antller. All Rights Reserved.
         </div>
-        <div className="flex justify-center ">
+        <div className="flex justify-center">
           <a href="">
-            <Facebook className="h-6 mr-1" />
+            <Facebook className="h-6 mr-1 hover:fill-footer-icon-darker   transition-all ease-in  fill-footer-icon" />
           </a>
           <a href="">
-            <Antller className="h-6 mr-1" />{" "}
+            <Antller className="h-6 mr-1 hover:fill-footer-icon-darker  transition-all ease-in  fill-footer-icon" />{" "}
           </a>
           <a href="">
-            <Insta className="h-6 mr-1" />{" "}
+            <Insta className="h-6 mr-1 hover:fill-footer-icon-darker transition-all ease-in fill-footer-icon" />{" "}
           </a>
           <a href="">
-            <Mail className="h-6 mr-1" />{" "}
+            <Mail className="h-6 mr-1 hover:fill-footer-icon-darker transition-all ease-in fill-footer-icon" />{" "}
           </a>
           <a href="">
-            <KakaoTalk className="h-6 mr-1" />{" "}
+            <KakaoTalk className="h-6 mr-1 hover:fill-footer-icon-darker transition-all ease-in fill-footer-icon" />{" "}
           </a>
         </div>
       </div>
