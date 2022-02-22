@@ -5,9 +5,9 @@ import { ReactComponent as Mail } from "../../assets/footer-icon/mail.svg";
 import { ReactComponent as KakaoTalk } from "../../assets/footer-icon/kakaotalk.svg";
 const Footer = () => {
   return (
-    <footer className="bg-footer flex items-center justify-center pt-6 pb-12">
+    <footer className="bg-footer flex items-center justify-center sm:pt-6 sm:pb-12 pt-3 pb-6">
       <div className=" max-w-9xl w-full  flex flex-col sm:flex-row place-content-between text-center text-gray-700 p-4">
-        <div className="text-footer-text text-xs pt-2">
+        <div className="text-footer-text text-xs pt-2 mb-4 sm:mb-0">
           Copyright © antller. All Rights Reserved.
         </div>
         <div className="flex justify-center">

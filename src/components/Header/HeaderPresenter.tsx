@@ -10,18 +10,21 @@ const Header = ({ links }: HeaderProps) => {
   return (
     <nav
       id="header"
-      className="bg-transparent font-spoqa  absolute top-0 left-0 right-0 w-full z-30      mx-auto sm:max-w-xl md:max-w-full lg:max-w-9xl "
+      className="bg-transparent font-spoqa  absolute top-0 left-0 right-0 w-full z-30 mx-auto sm:max-w-xl md:max-w-full lg:max-w-9xl "
     >
-      <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0  pt-11">
-        <div className="order-1 md:order-1">
+      <div className="w-full  mx-auto flex flex-wrap items-center justify-between mt-0  pt-11">
+        <div className=" ">
           <Link
             className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 "
             to="/"
           >
-            <img className="h-[42px]" src={Logo} alt="" />
+            <img className="md:h-[42px] h-8" src={Logo} alt="" />
           </Link>
         </div>
-        <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
+        <label
+          htmlFor="menu-toggle"
+          className="cursor-pointer md:hidden block mr-4"
+        >
           <svg
             className="fill-current text-gray-900"
             xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +39,7 @@ const Header = ({ links }: HeaderProps) => {
         <input className="hidden" type="checkbox" id="menu-toggle" />
 
         <div
-          className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-2"
+          className="hidden md:flex md:items-center md:w-auto w-full order-3 "
           id="menu"
         >
           <nav>
@@ -44,7 +47,7 @@ const Header = ({ links }: HeaderProps) => {
               {links.map((link) => (
                 <li>
                   <Link
-                    className="text-[0.95rem] inline-block no-underline hover:text-black   transition-all ease-in hover:font-bold  hover:decoration-2  px-4"
+                    className="text-[0.95rem] inline-block no-underline hover:text-black   transition-all ease-in hover:font-bold  hover:decoration-2  last:px-content px-4"
                     to={link.src}
                   >
                     {link.name}

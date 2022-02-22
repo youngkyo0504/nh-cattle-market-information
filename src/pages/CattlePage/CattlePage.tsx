@@ -4,8 +4,8 @@ import { cattleMarket } from "../../datas";
 const CattlePage = () => {
   return (
     <>
-      <div className="flex justify-center items-center mt-24">
-        <div>
+      <div className="flex max-w-9xl mx-auto mt-56 justify-between mb-24">
+        <div className="mt-6">
           <h1 className="font-bold text-2xl mb-12 px-1.5 text-blue">
             우시장 둘러보기
           </h1>
@@ -22,15 +22,21 @@ const CattlePage = () => {
             ))}
           </ul>
         </div>
+        <div className="max-w-[865px] w-full flex justify-center items-center">
+          <Iframe
+            className={" px-3 w-full overflow-y-auto min-h-[1200px] mt-4"}
+            src={"/cattle-market-information-center/iframe/woo-table-a.html"}
+          />
+        </div>
 
-        <Iframe
+        {/* <Iframe
           className={"w-3/6"}
           src={"/cattle-market-information-center/iframe/woo-table2.html"}
         />
         <Iframe
           className={"w-4/12"}
           src={"/cattle-market-information-center/iframe/kpn.html"}
-        />
+        /> */}
       </div>
     </>
   );
