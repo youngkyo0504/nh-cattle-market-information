@@ -1,6 +1,7 @@
 interface ILink {
   name: string;
-  src: string;
+  subLink?: ILink[];
+  src?: string;
 }
 
 export default ILink;

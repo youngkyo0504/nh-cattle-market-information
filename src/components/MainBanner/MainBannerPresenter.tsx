@@ -26,8 +26,8 @@ const MainBanner = () => {
               </Link>
             </div>
             <img
-              className={"mt-[4rem] max-w-[50rem] w-full  mx-auto"}
-              src={bannerImgae}
+              className={"mt-[4rem] h-auto  max-w-[50rem] w-full  mx-auto"}
+              src={"/cattle-market-information-center/cattle.png"}
               alt=""
             />
           </div>

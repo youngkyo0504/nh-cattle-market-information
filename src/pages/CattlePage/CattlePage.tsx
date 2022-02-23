@@ -11,12 +11,15 @@ const CattlePage = () => {
           </h1>
           <div className="flex flex-col">
             <div className="border-b font-medium justify-between flex -tracking-[0.03rem] text-lg px-1.5 pb-3.5 mb-3 text-blue  border-blue ">
-              <span>우시장 목록</span>
+              <span className="font-bold">우시장 목록</span>
             </div>
           </div>
           <ul>
             {Object.values(cattleMarket).map((market) => (
-              <li className="cursor-pointer text-gray-nav -tracking-[0.025rem]  hover:text-blue px-1.5 py-2 ">
+              <li
+                onClick={() => {}}
+                className="cursor-pointer text-gray-nav -tracking-[0.025rem] font-bold hover:text-blue px-1.5 py-2 "
+              >
                 {market.title}
               </li>
             ))}
@@ -25,7 +28,7 @@ const CattlePage = () => {
         <div className="max-w-[865px] w-full flex justify-center items-center">
           <Iframe
             className={" px-3 w-full overflow-y-auto min-h-[1200px] mt-4"}
-            src={"/cattle-market-information-center/iframe/woo-table-a.html"}
+            src={"/cattle-market-information-center/iframe/gch.html"}
           />
         </div>
 

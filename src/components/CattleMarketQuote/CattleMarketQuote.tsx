@@ -7,7 +7,7 @@ const CattleMarketQuote = () => {
     <article className=" py-12 px-4 mx-auto  sm:max-w-9xl   ">
       <div className="  flex-col lg:flex-row  flex place-content-between w-full  ">
         {/* title */}
-        <div className="sm:px-content lg:mb-0  mb-8">
+        <div className="lg:px-content lg:mb-0  mb-8">
           <div className="sm:text-title  text-subtitle text-blue-900 font-bold  text-blue  flex-1 ">
             <h2>우시장 시세</h2>
           </div>
