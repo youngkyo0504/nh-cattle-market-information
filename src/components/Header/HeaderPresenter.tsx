@@ -10,20 +10,20 @@ const Header = ({ links }: HeaderProps) => {
   return (
     <nav
       id="header"
-      className="bg-transparent font-spoqa  absolute top-0 left-0 right-0 w-full z-30 mx-auto  lg:max-w-9xl "
+      className="absolute top-0  left-0 right-0 z-30 mx-auto w-full bg-transparent font-spoqa  lg:max-w-9xl "
     >
-      <div className="w-full  mx-auto flex flex-wrap items-center justify-between mt-0  pt-11">
+      <div className="mx-auto  mt-0 flex w-full flex-wrap items-center justify-between  pt-11">
         <div className=" ">
           <Link
-            className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 "
+            className="text-gray-800 flex items-center font-bold tracking-wide no-underline hover:no-underline "
             to="/"
           >
-            <img className="md:h-[42px] h-8" src={Logo} alt="" />
+            <img className="h-8 md:h-[42px]" src={Logo} alt="" />
           </Link>
         </div>
         <label
           htmlFor="menu-toggle"
-          className="cursor-pointer md:hidden block mr-4"
+          className="mr-4 block cursor-pointer md:hidden"
         >
           <svg
             className="fill-current text-gray-900"
@@ -39,28 +39,28 @@ const Header = ({ links }: HeaderProps) => {
         <input className="hidden" type="checkbox" id="menu-toggle" />
 
         <div
-          className="hidden md:flex md:items-center md:w-auto w-full order-3 "
+          className="order-3 hidden w-full md:flex md:w-auto md:items-center "
           id="menu"
         >
           <nav>
-            <ul className="md:flex  justify-between text-base text-gray-nav pt-4 md:pt-0 h-8">
+            <ul className="h-8  justify-between pt-4 text-base text-gray-nav md:flex md:pt-0">
               {links.map((link) => (
                 <li>
                   <Link
-                    className="text-[0.95rem] inline-block no-underline hover:text-black   transition-all ease-in hover:font-bold  hover:decoration-2  last:px-content px-4"
+                    className="inline-block px-4 text-[0.95rem] no-underline   transition-all ease-in last:px-content  hover:font-bold  hover:text-black hover:decoration-2"
                     to={link.src ? link.src : ""}
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
-              <div className="relative group">
-                <button className="flex flex-row items-center text-[0.95rem] no-underline group-hover:text-black   transition-all ease-in group-hover:font-bold last:px-content px-4">
+              <div className="group relative">
+                <button className="flex flex-row items-center px-4 text-[0.95rem] no-underline   transition-all ease-in last:px-content group-hover:font-bold group-hover:text-black">
                   <span>KPN 분석</span>
-                  <span className="pl-1 text-blue text-[0.2rem]">▼</span>
+                  <span className="pl-1 text-[0.2rem] text-blue">▼</span>
                 </button>
-                <div className="  bg-white top-full right-content  w-48 min-w-full  absolute  z-10 translate-y-2  rounded-lg shadow-md  group-hover:translate-y-0 transition-all opacity-0 ease-in-out  group-hover:opacity-100  duration-500">
-                  <div className=" rounded-md px-2 pt-2 pb-2   bg-white text-md ">
+                <div className="absolute top-full right-content z-10 hidden w-48 min-w-full translate-y-0 animate-fade-in-up rounded-lg  bg-white    shadow-md  transition-all duration-500 ease-in-out group-hover:block  ">
+                  <div className=" text-md rounded-md bg-white px-2   pt-2 pb-2 ">
                     <ul className="text-sm">
                       <li className="rounded-md px-4 py-2 hover:bg-[#F1F2F4]">
                         KPN 분석
