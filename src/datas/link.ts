@@ -13,10 +13,10 @@ const links: ILink[] = [
     name: "자주 묻는 질문",
     src: "/cattle",
   },
-  {
-    name: "우시장 정보",
-    src: "/markets",
-  },
+  // {
+  //   name: "우시장 정보",
+  //   src: "/markets",
+  // },
 ];
 
 export default links;

@@ -54,7 +54,7 @@ const Header = ({ links }: HeaderProps) => {
                   </Link>
                 </li>
               ))}
-              <div className="group relative">
+              {/* <div className="group relative">
                 <button className="flex flex-row items-center px-4 text-[0.95rem] no-underline   transition-all ease-in last:px-content group-hover:font-bold group-hover:text-black">
                   <span>KPN 분석</span>
                   <span className="pl-1 text-[0.2rem] text-blue">▼</span>
@@ -71,7 +71,7 @@ const Header = ({ links }: HeaderProps) => {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </ul>
           </nav>
         </div>
