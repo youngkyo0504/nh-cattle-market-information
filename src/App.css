@@ -73,3 +73,20 @@
     transform: rotate(360deg);
   }
 }
+
+/* // swiper  */
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+.swiper-container-vertical .swiper-wrapper {
+  position: absolute;
+  width: 100%;
+}
