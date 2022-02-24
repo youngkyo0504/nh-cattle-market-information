@@ -4,7 +4,7 @@ import { cattleMarket } from "../../datas";
 const CattlePage = () => {
   return (
     <>
-      <div className="flex max-w-9xl mx-auto mt-56 justify-between mb-24">
+      <div className="flex max-w-9xl mx-auto mt-56 min-h-[70vh] justify-between mb-24">
         <div className="mt-6">
           <h1 className="font-bold text-2xl mb-12 px-1.5 text-blue">
             우시장 둘러보기

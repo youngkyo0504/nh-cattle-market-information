@@ -68,7 +68,6 @@ const meatSeriesOption: Highcharts.SeriesOptionsType[] = [
       },
       hover: { enabled: false },
     },
-
     data: cowPriceData.data.lastYearData,
   },
 ];

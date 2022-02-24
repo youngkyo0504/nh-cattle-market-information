@@ -11,7 +11,7 @@ const links: ILink[] = [
   },
   {
     name: "자주 묻는 질문",
-    src: "/cattle",
+    src: "/faq",
   },
   // {
   //   name: "우시장 정보",

@@ -28,6 +28,10 @@ const Iframe = ({ src, className }: { src: string; className: string }) => {
 
   useEffect(() => {
     window.addEventListener("resize", onResizeIframe);
+
+    return () => {
+      window.removeEventListener("resize", onResizeIframe);
+    };
   }, []);
   return (
     <>
