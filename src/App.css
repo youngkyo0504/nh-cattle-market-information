@@ -90,3 +90,9 @@
   position: absolute;
   width: 100%;
 }
+
+.presentation-1 {
+  background-image: url("./assets/presentation/3.1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

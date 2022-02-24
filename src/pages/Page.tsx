@@ -5,12 +5,14 @@ import MainPage from "./MainPage/MainPage";
 import IntroductionPage from "./IntroductionPage/IntroductionPage";
 // import MarketsPage from "./MarketsPage/MarketsPage";
 import CattlePage from "./CattlePage/CattlePage";
+// import FaqPage from "./FaqPage/FaqPage";
 
 const Page = () => {
   return (
-    <main className={"min-h-screen"}>
+    <main className={""}>
       <Routes>
         <Route path="/" element={<MainPage />} />
+        {/* <Route path="/faq" element={<FaqPage />}></Route> */}
 
         <Route path="/introduction" element={<IntroductionPage />} />
         <Route path="/cattle" element={<CattlePage />} />
