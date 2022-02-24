@@ -13,7 +13,7 @@ const Page = () => {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/faq" element={<FaqPage />}></Route>
-        {/* <Route path="/introduction" element={<IntroductionPage />} /> */}
+        <Route path="/introduction" element={<IntroductionPage />} />
         <Route path="/cattle" element={<CattlePage />} />
         {/* <Route path="/trends" element={<TrendPage />} /> */}
         {/* <Route path="/markets" element={<MarketsPage />} /> */}

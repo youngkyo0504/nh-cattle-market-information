@@ -76,10 +76,14 @@ module.exports = {
         },
       },
       animation: {
-        "fade-in-down": "fade-in-down 0.5s ease-out",
+        "fade-in-down": "fade-in-down 0.5s 0.5s ease-out both",
+        "fade-in-up-2": "fade-in-up 0.5s 0.6s ease-out both",
+        "fade-in-up-3": "fade-in-up 0.5s 1s  ease-out both",
+        "fade-in-up-1": "fade-in-up 0.5s 0.2s ease-out both",
+
         "fade-out-down": "fade-out-down 0.5s ease-out",
-        "fade-in-up": "fade-in-up 0.5s ease-out",
-        "fade-out-up": "fade-out-up 0.5s ease-out",
+        "fade-in-up": "fade-in-up 0.5s ease-out both",
+        "fade-out-up": "0.5s fade-out-up 0.5s ease-out",
       },
       spacing: { content: "1.625rem" },
       fontSize: {
