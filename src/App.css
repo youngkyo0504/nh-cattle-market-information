@@ -79,7 +79,10 @@
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: auto !important;
+}
+.swiper-wrapper {
+  min-height: 100%;
 }
 
 .swiper-slide img {

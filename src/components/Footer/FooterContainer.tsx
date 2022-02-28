@@ -3,7 +3,7 @@
 import Footer from "./FooterPresenter";
 
 const FooterContainer = () => {
-    return <Footer/>
-}
+  return <Footer />;
+};
 
-export default FooterContainer
+export default FooterContainer;

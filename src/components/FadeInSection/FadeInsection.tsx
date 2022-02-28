@@ -20,9 +20,7 @@ const FadeInSection = ({
   }, [isVisible]);
 
   useEffect(() => {
-    console.log(cb);
     if (!isVisible && cb) {
-      console.log("hi");
       cb();
     } else if (cb && isVisible) {
       const a = document.querySelector<HTMLElement>("#header");
