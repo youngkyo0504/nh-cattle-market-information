@@ -4,13 +4,13 @@ import { cattleMarket } from "../../datas";
 const CattlePage = () => {
   return (
     <>
-      <div className="flex max-w-9xl mx-auto mt-56 min-h-[70vh] justify-between mb-24">
-        <div className="mt-6">
-          <h1 className="font-bold text-2xl mb-12 px-1.5 text-blue">
+      <div className="mx-auto mt-28 mb-24 flex min-h-[70vh] max-w-9xl flex-col justify-between  md:mt-56 md:flex-row">
+        <div className="px-4  md:mt-6">
+          <h1 className="mb-12 hidden px-1.5 text-2xl font-bold text-blue md:block">
             우시장 둘러보기
           </h1>
           <div className="flex flex-col">
-            <div className="border-b font-medium justify-between flex -tracking-[0.03rem] text-lg px-1.5 pb-3.5 mb-3 text-blue  border-blue ">
+            <div className="mb-3 flex justify-between border-b border-blue px-1.5 pb-3.5  font-medium -tracking-[0.03rem] text-blue  sm:text-lg ">
               <span className="font-bold">우시장 목록</span>
             </div>
           </div>
@@ -18,16 +18,17 @@ const CattlePage = () => {
             {Object.values(cattleMarket).map((market) => (
               <li
                 onClick={() => {}}
-                className="cursor-pointer text-gray-nav -tracking-[0.025rem] font-bold hover:text-blue px-1.5 py-2 "
+                className="cursor-pointer px-1.5 py-2 text-xs font-bold -tracking-[0.025rem] text-gray-nav hover:text-blue sm:text-base "
               >
                 {market.title}
               </li>
             ))}
           </ul>
         </div>
-        <div className="max-w-[865px] w-full flex justify-center items-center">
+
+        <div className="flex w-full max-w-[865px] items-center justify-center ">
           <Iframe
-            className={" px-3 w-full overflow-y-auto min-h-[1200px] mt-4"}
+            className={" mt-4 min-h-[1200px] w-full overflow-y-auto md:px-3"}
             src={"/cattle-market-information-center/iframe/gch.html"}
           />
         </div>

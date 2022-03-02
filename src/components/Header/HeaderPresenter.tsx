@@ -12,7 +12,7 @@ const Header = ({ links }: HeaderProps) => {
       id="header"
       className="absolute top-0 left-0  right-0 z-30 mx-auto w-full bg-transparent px-4 font-spoqa  lg:max-w-9xl "
     >
-      <div className="mx-auto  mt-0 flex w-full flex-wrap items-center justify-between pt-11  ">
+      <div className="mx-auto  mt-0 flex w-full flex-wrap items-center justify-between pt-8 md:pt-11  ">
         <div className=" ">
           <Link
             className="text-gray-800 flex items-center font-bold tracking-wide no-underline hover:no-underline "
@@ -59,12 +59,19 @@ const Header = ({ links }: HeaderProps) => {
                 <div className="absolute top-full right-content z-10 hidden w-48 min-w-full translate-y-0 animate-fade-in-up rounded-lg  bg-white    shadow-md  transition-all duration-500 ease-in-out group-hover:block  ">
                   <div className=" text-md rounded-md bg-white px-2   pt-2 pb-2 ">
                     <ul className="text-sm">
-                      <li className="rounded-md px-4 py-2 hover:bg-[#F1F2F4]">
-                        KPN 분석
-                      </li>
-                      <li className="rounded-md px-4 py-2 hover:bg-[#F1F2F4]">
-                        KPN 족보
-                      </li>
+                      <a
+                        target={"#"}
+                        href="/cattle-market-information-center/iframe/kpn-family-tree.html"
+                      >
+                        <li className="rounded-md px-4 py-2 hover:bg-[#F1F2F4]">
+                          KPN 족보
+                        </li>
+                      </a>
+                      <Link to={"/kpn/kpn-info"}>
+                        <li className="rounded-md px-4 py-2 hover:bg-[#F1F2F4]">
+                          KPN 분석
+                        </li>
+                      </Link>
                     </ul>
                   </div>
                 </div>

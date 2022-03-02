@@ -6,6 +6,7 @@ import IntroductionPage from "./IntroductionPage/IntroductionPage";
 // import MarketsPage from "./MarketsPage/MarketsPage";
 import CattlePage from "./CattlePage/CattlePage";
 import FaqPage from "./FaqPage/FaqPage";
+import KPNPage from "./KPNPage/KPNPage";
 
 const Page = () => {
   return (
@@ -16,6 +17,7 @@ const Page = () => {
         {/* <Route path="/faq" element={<FaqPage />}></Route> */}
         <Route path="/introduction" element={<IntroductionPage />} />
         <Route path="/cattle" element={<CattlePage />} />
+        <Route path="/kpn/:kpnId" element={<KPNPage />} />
         {/* <Route path="/trends" element={<TrendPage />} /> */}
         {/* <Route path="/markets" element={<MarketsPage />} /> */}
         {/* <Route path="/onepage" element={<OnePage />} /> */}
