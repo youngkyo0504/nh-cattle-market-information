@@ -14,8 +14,8 @@ const MainBanner = () => {
           <div className="flex flex-col  sm:text-center ">
             <div className="mb-12  max-w-xl text-center md:mx-auto lg:max-w-6xl">
               <h2 className="  font-spoqa text-3xl font-bold  -tracking-[0.118rem] text-blue md:mx-auto md:text-5xl md:text-[4rem] ">
-                <p className={"p-2 "}>좋은 송아지를 고르는 기준</p>
-                <p className="text-blue">우시장 정보센터</p>
+                <p className={"p-2 "}>데이터를 통한</p>
+                <p className="text-blue">합리적인 송아지 구매</p>
               </h2>
             </div>
             <div className="mx-auto flex">

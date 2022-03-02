@@ -12,7 +12,7 @@ const Header = ({ links }: HeaderProps) => {
       id="header"
       className="absolute top-0 left-0  right-0 z-30 mx-auto w-full bg-transparent px-4 font-spoqa  lg:max-w-9xl "
     >
-      <div className="mx-auto  mt-0 flex w-full flex-wrap items-center justify-between pt-11  md:px-content">
+      <div className="mx-auto  mt-0 flex w-full flex-wrap items-center justify-between pt-11  ">
         <div className=" ">
           <Link
             className="text-gray-800 flex items-center font-bold tracking-wide no-underline hover:no-underline "
