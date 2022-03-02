@@ -12,9 +12,11 @@ function App() {
   return (
     <>
       <Router basename="/cattle-market-information-center">
-        <HeaderContainer />
-        <Page />
-        <FooterContainer />
+        <div className="flex min-h-screen flex-col">
+          <HeaderContainer />
+          <Page />
+          <FooterContainer />
+        </div>
       </Router>
     </>
   );

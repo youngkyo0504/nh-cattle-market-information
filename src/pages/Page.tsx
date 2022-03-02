@@ -9,7 +9,7 @@ import FaqPage from "./FaqPage/FaqPage";
 
 const Page = () => {
   return (
-    <main className={""}>
+    <main className={"flex-1"}>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/faq" element={<FaqPage />}></Route>

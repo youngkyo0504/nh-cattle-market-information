@@ -6,12 +6,12 @@ import { ReactComponent as KakaoTalk } from "../../assets/footer-icon/kakaotalk.
 import { useEffect } from "react";
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-center bg-footer pt-3 pb-6 sm:pt-6 sm:pb-12">
-      <div className=" text-gray-700 flex  w-full max-w-9xl flex-col place-content-between p-4 text-center sm:flex-row">
-        <div className="mb-4 pt-2 text-xs text-footer-text sm:mb-0">
+    <footer className="flex items-center justify-center bg-footer pt-3  sm:pt-6 sm:pb-12">
+      <div className=" text-gray-700 flex  w-full max-w-9xl flex-col place-content-between p-4 sm:flex-row sm:text-center">
+        <div className="order-2 mb-4 pt-2 text-xs text-footer-text sm:order-1 sm:mb-0">
           Copyright © antller. All Rights Reserved.
         </div>
-        <div className="flex justify-center">
+        <div className="order-1 flex sm:order-2 sm:justify-center">
           <a href="">
             <Facebook className="mr-1 h-6 fill-footer-icon   transition-all ease-in  hover:fill-footer-icon-darker" />
           </a>
