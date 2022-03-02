@@ -28,8 +28,6 @@ const FadeInSection = ({
     }
     const observer = new IntersectionObserver(
       (entries) => {
-        console.log(children);
-        console.log(entries);
         // In your case there's only one element to observe:
         if (entries[0].isIntersecting) {
           // Not possible to set it back to false like this:

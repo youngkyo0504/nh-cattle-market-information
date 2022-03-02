@@ -28,12 +28,16 @@ function IntroductionPage() {
   const s = useSwiper();
   const ref = useRef<SwiperCore>();
   useEffect(() => {
-    // setTimeout(() => {
-    //   window.scrollTo(0, 0);
-    // }, 300);
+    document.body.style.overflowY = "hidden";
+
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 300);
     window.onwheel = (e) => {
+      // console.log(e.deltaY, window.scrollY);
       if (window.scrollY === 0 && e.deltaY < 0) {
         setTimeout(() => {
+          console.log("hey");
           if (ref.current) {
             const mousewheelOption = ref.current.params
               .mousewheel as MousewheelOptions;
@@ -45,6 +49,7 @@ function IntroductionPage() {
       }
     };
     return () => {
+      console.log("auto");
       document.body.style.overflowY = "auto";
     };
   }, []);
@@ -54,27 +59,12 @@ function IntroductionPage() {
         ref.current = swiper;
       }}
       initialSlide={0}
-      modules={[
-        Controller,
-        Keyboard,
-        Mousewheel,
-        Scrollbar,
-        Pagination,
-        Scrollbar,
-      ]}
-      onSlideChange={(swiper) => {
-        setTimeout(function () {
-          const mousewheelOption = swiper.params
-            .mousewheel as MousewheelOptions;
-          mousewheelOption.releaseOnEdges = false;
-        }, 500);
-      }}
+      modules={[Keyboard, Mousewheel, Pagination]}
+      spaceBetween={0}
       autoHeight={true}
-      scrollbar={{ draggable: true }}
-      followFinger={false}
       pagination={{ clickable: true }}
       touchReleaseOnEdges={false}
-      updateOnWindowResize={true}
+      // updateOnWindowResize={true}
       speed={1000}
       slidesPerView={1}
       direction={"vertical"}
@@ -88,12 +78,16 @@ function IntroductionPage() {
         enabled: true,
       }}
       onReachEnd={(swiper) => {
-        document.body.style.overflowY = "";
+        // document.body.style.overflowY = "";
+        console.log("end");
+
         setTimeout(function () {
           const mousewheelOption = swiper.params
             .mousewheel as MousewheelOptions;
           mousewheelOption.releaseOnEdges = true;
           swiper.mousewheel.disable();
+          document.body.style.overflowY = "auto";
+
           swiper.disable();
         }, 1000);
       }}
@@ -123,19 +117,33 @@ function IntroductionPage() {
               <p className="font-bold capitalize text-blue">STORY 1.</p>
               <p className="mt-4 text-2xl font-bold">우시장 정보센터란?</p>
             </div>
-            <div className=" animate-fade-in-up text-6xl font-bold leading-[1.26] text-blue ">
-              <p>데이터를 통한</p>
+            <div className=" animate-fade-in-up text-6xl font-bold leading-[1.26] text-black ">
+              <p>좋은 송아지를</p>
               <p>
-                합리적인 송아지 구매 정보
-                <span className="text-black">를</span>
+                고르는 기준,
+                {/* <span className="text-black">를</span> */}
               </p>
-              <p className="text-black">제공하는</p>
-              <p>우시장 정보센터</p>
+              {/* <p className="text-black">제공하는</p> */}
+              <p className="text-blue">우시장 정보센터</p>
             </div>
-            <div className="leading-[ 1.37]  animate-fade-in-up-2 text-2xl  delay-100">
-              <p>좋은 사양관리의 첫 단추는 좋은 송아지를 사는 것 입니다.</p>
+            <div className="   animate-fade-in-up-2 text-2xl  leading-relaxed">
+              {/* <p>좋은 사양관리의 첫 단추는 좋은 송아지를 사는 것 입니다.</p>
               <p>우시장 출품우의 혈통과 가격을 분석해</p>
-              <p>한우 농가가 꼭 맞는 소를 살 수 있게 도와줍니다.</p>
+              <p>한우 농가가 꼭 맞는 소를 살 수 있게 도와줍니다.</p> */}
+              <p>좋은 송아지, 어떻게 알아보셨나요?</p>
+              <p>
+                누군가는 자신의 경험, 누군가는 주변의 이야기 등 다양한 기준으로
+                송아지를 선택해왔습니다.
+              </p>
+              <p>
+                이제는 우시장 정보센터에서 데이터를 기준 삼아 좋은 송아지를
+                알아보세요.
+              </p>
+              <p>경험이 없어도 괜찮습니다.</p>
+              <p>
+                우시장 출품우의 데이터를 기준으로 나에게 맞는 좋은 송아지를 고를
+                수 있으니까요.
+              </p>
             </div>
           </article>
         </FadeInSection>

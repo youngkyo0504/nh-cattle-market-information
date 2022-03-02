@@ -9,24 +9,24 @@ const MainBanner = () => {
           "transparent linear-gradient(0deg, #FFFFFF 0%, #EEEAE7 100%) 0% 0% no-repeat padding-box",
       }}
     >
-      <div className="px-4 p-16 mx-auto sm:max-w-xl md:max-w-full font-spoqa lg:max-w-7xl md:px-24 lg:px-2 md:pt-48 pt-32 ">
-        <div className="max-w-xl mx-auto lg:max-w-6xl">
+      <div className="mx-auto p-16 px-4 pt-32 font-spoqa sm:max-w-xl md:max-w-full md:px-24 md:pt-48 lg:max-w-7xl lg:px-2 ">
+        <div className="mx-auto max-w-xl lg:max-w-6xl">
           <div className="flex flex-col  sm:text-center ">
-            <div className="max-w-xl  md:mx-auto text-center lg:max-w-6xl mb-12">
-              <h2 className=" text-blue font-spoqa text-3xl md:text-5xl font-bold   -tracking-[0.118rem] md:text-[4rem] md:mx-auto leading-tight">
-                <p className={"p-2 "}>데이터를 통한</p>
-                합리적인 송아지 구매
+            <div className="mb-12  max-w-xl text-center md:mx-auto lg:max-w-6xl">
+              <h2 className="  font-spoqa text-3xl font-bold  -tracking-[0.118rem] text-blue md:mx-auto md:text-5xl md:text-[4rem] ">
+                <p className={"p-2 "}>좋은 송아지를 고르는 기준</p>
+                <p className="text-blue">우시장 정보센터</p>
               </h2>
             </div>
-            <div className="flex mx-auto">
+            <div className="mx-auto flex">
               <Link to="/">
-                <span className="text-xl py-3 px-7 md:text-2xl md:py-4  font-spoqa traking-[-0.75px] bg-blue font-bold  text-white inline-flex items-center justify-center  md:px-9 -tracking-wide   transition duration-200 rounded-4xl shadow-md -deep-purple-accent-400 hover:-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
+                <span className="traking-[-0.75px] -deep-purple-accent-400 hover:-deep-purple-accent-700 focus:shadow-outline inline-flex  items-center justify-center rounded-4xl bg-blue  py-3 px-7 font-spoqa text-xl  font-bold -tracking-wide   text-white shadow-md transition duration-200 focus:outline-none md:py-4 md:px-9 md:text-2xl">
                   우시장 둘러보기
                 </span>
               </Link>
             </div>
             <img
-              className={"mt-[4rem] h-auto  max-w-[50rem] w-full  mx-auto"}
+              className={"mx-auto mt-[4rem]  h-auto w-full  max-w-[50rem]"}
               src={"/cattle-market-information-center/cattle.png"}
               alt=""
             />
