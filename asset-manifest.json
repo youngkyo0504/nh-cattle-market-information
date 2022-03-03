@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nh-cattle-market-information/static/css/main.9f24e4bf.css",
-    "main.js": "/nh-cattle-market-information/static/js/main.12133243.js",
+    "main.js": "/nh-cattle-market-information/static/js/main.7dab3077.js",
     "static/js/787.ded624b7.chunk.js": "/nh-cattle-market-information/static/js/787.ded624b7.chunk.js",
     "static/media/3.1.png": "/nh-cattle-market-information/static/media/3.1.908920a7270b2eec5a78.png",
     "static/media/SpoqaHanSansNeo-Medium.ttf": "/nh-cattle-market-information/static/media/SpoqaHanSansNeo-Medium.cf5c6ddcaec3f59a13c7.ttf",
@@ -10,6 +10,7 @@
     "static/media/SpoqaHanSansNeo-Medium.woff": "/nh-cattle-market-information/static/media/SpoqaHanSansNeo-Medium.823120084c9ac260b260.woff",
     "static/media/SpoqaHanSansNeo-Bold.woff2": "/nh-cattle-market-information/static/media/SpoqaHanSansNeo-Bold.1db18034ccc384032a4a.woff2",
     "static/media/SpoqaHanSansNeo-Medium.woff2": "/nh-cattle-market-information/static/media/SpoqaHanSansNeo-Medium.8589927a4fa35d637a8d.woff2",
+    "static/media/nh.png": "/nh-cattle-market-information/static/media/nh.bd5d67bd9b9ac61f5ee6.png",
     "static/media/qna@2x.png": "/nh-cattle-market-information/static/media/qna@2x.fc97c069f84a50fb67d4.png",
     "static/media/2.3.png": "/nh-cattle-market-information/static/media/2.3.a0da431e30db18c2519c.png",
     "static/media/2.2.png": "/nh-cattle-market-information/static/media/2.2.d1d2a0ff14c923cb643d.png",
@@ -21,11 +22,11 @@
     "static/media/mail.svg": "/nh-cattle-market-information/static/media/mail.4060145052d88d768ab44eea4d128bd3.svg",
     "static/media/facebook.svg": "/nh-cattle-market-information/static/media/facebook.83158d28c565b765f89c32b68ea23ed0.svg",
     "main.9f24e4bf.css.map": "/nh-cattle-market-information/static/css/main.9f24e4bf.css.map",
-    "main.12133243.js.map": "/nh-cattle-market-information/static/js/main.12133243.js.map",
+    "main.7dab3077.js.map": "/nh-cattle-market-information/static/js/main.7dab3077.js.map",
     "787.ded624b7.chunk.js.map": "/nh-cattle-market-information/static/js/787.ded624b7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9f24e4bf.css",
-    "static/js/main.12133243.js"
+    "static/js/main.7dab3077.js"
   ]
 }
