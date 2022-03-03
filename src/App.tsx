@@ -11,7 +11,7 @@ scrollRestore = "manual";
 function App() {
   return (
     <>
-      <Router basename="/cattle-market-information-center">
+      <Router basename="/nh-cattle-market-information">
         <div className="flex min-h-screen flex-col">
           <HeaderContainer />
           <Page />

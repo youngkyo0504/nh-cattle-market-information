@@ -9,7 +9,7 @@ const KPNPage = () => {
     <section className="mx-auto mt-32 flex w-full max-w-9xl items-center justify-center">
       <Iframe
         className={"mt-4  w-full  overflow-y-auto px-3 md:mt-12"}
-        src={`/cattle-market-information-center/iframe/${kpnId}.html`}
+        src={`/nh-cattle-market-information/iframe/${kpnId}.html`}
       />
     </section>
   );

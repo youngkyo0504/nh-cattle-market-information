@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ILink } from "../../@types/index";
-import Logo from "../../assets/woo-logo.png";
+import Logo from "../../assets/nh-logo/nh.png";
 
 interface HeaderProps {
   links: ILink[];
