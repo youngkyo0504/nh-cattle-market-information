@@ -66,7 +66,7 @@ const Header = ({ links }: HeaderProps) => {
                           KPN 족보
                         </li>
                       </a>
-                      <Link to={"/kpn/kpn-info"}>
+                      <Link to={"/kpn/kpn1"}>
                         <li className="rounded-md px-4 py-2 hover:bg-[#F1F2F4]">
                           KPN 분석
                         </li>

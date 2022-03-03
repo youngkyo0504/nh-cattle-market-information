@@ -4,12 +4,19 @@ import stockOptions from "../../datas/minimalData";
 import TrendGraph from "../../pages/TrendPage/TrendGraph";
 import HighChartCowDataMaker from "../../service/highcart-data-maker/highchart-cow-data-maker";
 import HighchartCowOptionMaker from "../../service/highchart-option-maker/highchart-cow-option-maker";
-import meatPrice from "../../datas/heifer.json";
+import meatPrice from "../../datas/json/heifer.json";
+import amPrice from "../../datas/json/am1.json";
+import suPrice from "../../datas/json/su1.json";
+import meanMeatPrice from "../../datas/json/meat1.json";
 import cowGraphInfo from "../../datas/cowGraphInfo";
 import ICowGraphInfo from "../../@types/CowGraphInfo";
 
 const highChartDataMaker = HighChartCowDataMaker.getInstance();
 const cowPriceData = highChartDataMaker.getData(meatPrice, 10);
+const suPriceData = highChartDataMaker.getData(suPrice, 10);
+const amPriceData = highChartDataMaker.getData(amPrice, 10);
+const meanMeatPriceData = highChartDataMaker.getData(meanMeatPrice, 10);
+console.log([...suPriceData.data.lastYearData]);
 const seriesoption: Highcharts.SeriesOptionsType[] = [
   {
     name: "수송아지",
@@ -17,7 +24,8 @@ const seriesoption: Highcharts.SeriesOptionsType[] = [
     type: "line",
     lineWidth: 1,
 
-    data: cowPriceData.data.thisYearData,
+    // data: [...suPriceData.data.lastYearData, ...suPriceData.data.thisYearData],
+    data: [...suPriceData.data.thisYearData],
     // TODO line 굵기나 다른 것 변경 예정
     states: {
       inactive: {
@@ -38,7 +46,8 @@ const seriesoption: Highcharts.SeriesOptionsType[] = [
       hover: { enabled: false },
     },
 
-    data: cowPriceData.data.lastYearData,
+    // data: [...amPriceData.data.lastYearData, ...amPriceData.data.thisYearData],
+    data: [...amPriceData.data.thisYearData],
   },
 ];
 const meatSeriesOption: Highcharts.SeriesOptionsType[] = [
@@ -48,7 +57,7 @@ const meatSeriesOption: Highcharts.SeriesOptionsType[] = [
     type: "line",
     lineWidth: 1,
 
-    data: cowPriceData.data.thisYearData,
+    data: meanMeatPriceData.data.thisYearData,
     // TODO line 굵기나 다른 것 변경 예정
     states: {
       inactive: {
@@ -68,7 +77,7 @@ const meatSeriesOption: Highcharts.SeriesOptionsType[] = [
       },
       hover: { enabled: false },
     },
-    data: cowPriceData.data.lastYearData,
+    data: meanMeatPriceData.data.lastYearData,
   },
 ];
 const highChartOptionMaker = HighchartCowOptionMaker.getInstance();
@@ -76,7 +85,7 @@ const minimalOption = highChartOptionMaker.getCowStockOptions(
   seriesoption,
   "만원"
 );
-const meatPriceOption = highChartOptionMaker.getCowStockOptions(
+const meatPriceOption = highChartOptionMaker.getMeatStockOptions(
   meatSeriesOption,
   "원"
 );

@@ -1,6 +1,4 @@
-import carcassPrices from "./heifer.json";
 import Highcharts, { ColorString, Options } from "highcharts";
-import { IPriceData } from "../@types";
 
 // Todo
 // Legacy code 변경해야됨

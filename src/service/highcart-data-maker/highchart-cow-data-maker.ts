@@ -1,7 +1,4 @@
-import { PointOptionsObject } from "highcharts";
-import carcassPrices from "../../datas/heifer.json";
 import { IPriceData } from "../../@types";
-import HighStockSeriesData from "../../@types/HighStockSeriesData";
 import HighchartSeriesDataMaker from "./highchart-data-maker";
 import ICowGraphInfo from "../../@types/CowGraphInfo";
 

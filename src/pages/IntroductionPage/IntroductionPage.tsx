@@ -4,25 +4,10 @@ import ImageGeo from "../../assets/presentation/1.1.png";
 import Image1 from "../../assets/presentation/2.1.png";
 import Image2 from "../../assets/presentation/2.2.png";
 import Image3 from "../../assets/presentation/2.3.png";
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Controller,
-  Thumbs,
-  Mousewheel,
-  Keyboard,
-  Scrollbar,
-  EffectFade,
-  EffectCoverflow,
-  EffectCube,
-} from "swiper";
-
-import { AttentionSeeker, Fade } from "react-awesome-reveal";
+import SwiperCore, { Pagination, Mousewheel, Keyboard } from "swiper";
 import FadeInSection from "../../components/FadeInSection/FadeInsection";
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer/FooterPresenter";
 import { MousewheelOptions } from "swiper/types";
-import ScrollToTopOnMount from "../../components/ScrollToTopOnMount/scrollToTopOnMount";
 
 function IntroductionPage() {
   const s = useSwiper();
@@ -33,6 +18,7 @@ function IntroductionPage() {
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 300);
+    window.onkeydown = (e) => {};
     window.onwheel = (e) => {
       // console.log(e.deltaY, window.scrollY);
       if (window.scrollY === 0 && e.deltaY < 0) {
@@ -60,7 +46,7 @@ function IntroductionPage() {
       }}
       initialSlide={0}
       modules={[Keyboard, Mousewheel, Pagination]}
-      spaceBetween={0}
+      spaceBetween={10}
       autoHeight={true}
       pagination={{ clickable: true }}
       touchReleaseOnEdges={false}
@@ -69,10 +55,10 @@ function IntroductionPage() {
       slidesPerView={1}
       direction={"vertical"}
       mousewheel={{
-        thresholdTime: 500,
+        thresholdTime: 900,
+        thresholdDelta: 90,
         releaseOnEdges: false,
-        forceToAxis: true,
-        sensitivity: 6,
+        sensitivity: 1,
       }}
       keyboard={{
         enabled: true,
@@ -98,13 +84,14 @@ function IntroductionPage() {
           <article className="flex h-full flex-col justify-around text-center font-bold">
             <div>
               <div className="animate-fade-in-up text-6xl font-bold text-blue">
-                90개의 우시장
+                전국 90개의 우시장
               </div>
               <div className="mt-7 animate-fade-in-up text-3xl font-bold ">
-                전국 우시장의 제각각의 정보들
+                흩어져 있는 정보들을 하나로
               </div>
               <div className="mx-auto mt-24 max-w-[76rem] animate-fade-in-up ">
-                <img className="w-full" src={ImageGeo} alt="" />
+                <img src="/cattle-market-information-center/1.1.png" alt="" />
+                {/* <img className="w-full" src={ImageGeo} alt="" /> */}
               </div>
             </div>
           </article>
@@ -127,23 +114,14 @@ function IntroductionPage() {
               <p className="text-blue">우시장 정보센터</p>
             </div>
             <div className="   animate-fade-in-up-2 text-2xl  leading-relaxed">
-              {/* <p>좋은 사양관리의 첫 단추는 좋은 송아지를 사는 것 입니다.</p>
-              <p>우시장 출품우의 혈통과 가격을 분석해</p>
-              <p>한우 농가가 꼭 맞는 소를 살 수 있게 도와줍니다.</p> */}
               <p>좋은 송아지, 어떻게 알아보셨나요?</p>
+              <p>수십년간 축적된 경험과 눈썰미가 없더라도 괜찮습니다.</p>
+              <p>2,300,000 건 이상 축적된 혈통, 이력 및 출하와 앤틀러의</p>
               <p>
-                누군가는 자신의 경험, 누군가는 주변의 이야기 등 다양한 기준으로
-                송아지를 선택해왔습니다.
+                차별화된 빅데이터를 분석을 통해 숨어있는 보석같은 송아지를
+                찾아보세요!
               </p>
-              <p>
-                이제는 우시장 정보센터에서 데이터를 기준 삼아 좋은 송아지를
-                알아보세요.
-              </p>
-              <p>경험이 없어도 괜찮습니다.</p>
-              <p>
-                우시장 출품우의 데이터를 기준으로 나에게 맞는 좋은 송아지를 고를
-                수 있으니까요.
-              </p>
+              <p>우시장정보센터가 힘껏 도와드리겠습니다.</p>
             </div>
           </article>
         </FadeInSection>
@@ -163,7 +141,7 @@ function IntroductionPage() {
                 <div className="flex h-80 flex-col justify-between">
                   <div>
                     <p className="font-bold capitalize text-blue">Service 1.</p>
-                    <p className="mt-2 text-2xl font-bold">AI 송아지 분석</p>
+                    <p className="mt-2 text-2xl font-bold">AI 한우 능력 분석</p>
                   </div>
                   <div>
                     <img className=" max-w-[16rem]" src={Image1} alt="" />
@@ -172,8 +150,9 @@ function IntroductionPage() {
 
                 <div className="mt-16 w-56 text-sm tracking-tighter">
                   <p>
-                    사육자, KPN, 계대 등 축산물이력제 기반 빅데이터 분석을 통해
-                    보다 정확한 송아지의 잠재능력을 제공합니다.
+                    KPN, 혈통, 송아지 생산자, 출하성적 등 23만건 이상의 축산물
+                    이력제 빅데이터를 앤틀러의 AI 분석을 통해 보다 정확한 <br />{" "}
+                    송아지 구매기준을 제시합니다.
                   </p>
                 </div>
               </div>
@@ -181,7 +160,7 @@ function IntroductionPage() {
                 <div className="flex h-80 flex-col justify-between">
                   <div>
                     <p className="font-bold capitalize text-blue">Service 2.</p>
-                    <p className="mt-2 text-2xl font-bold">가격 비교</p>
+                    <p className="mt-2 text-2xl font-bold">유사도 분석</p>
                   </div>
                   <div>
                     <img className=" max-w-[14rem]" src={Image2} alt="" />
@@ -190,8 +169,9 @@ function IntroductionPage() {
 
                 <div className="mt-16 w-56 text-sm tracking-tighter">
                   <p>
-                    사고자 하는 송아지와 비슷한 잠재능력을 가진 다른 송아지의
-                    유사도 분석을 통해 최신 가격정보를 제공합니다.
+                    거래된 소와 비슷한 잠재능력을 가진 다른 송아지가 최근 얼마에
+                    거래되었는지 가격 비교 정보를 통해 보다 합리적인 <br />
+                    송아지 구매기준을 제시합니다.
                   </p>
                 </div>
               </div>
@@ -199,7 +179,7 @@ function IntroductionPage() {
                 <div className="flex h-80 flex-col justify-between">
                   <div>
                     <p className="font-bold capitalize text-blue">Service 3.</p>
-                    <p className="mt-2 text-2xl font-bold">시세 분석</p>
+                    <p className="mt-2 text-2xl font-bold">정보 제공</p>
                   </div>
                   <div>
                     <img className=" max-w-[12rem]" src={Image3} alt="" />
@@ -208,8 +188,10 @@ function IntroductionPage() {
 
                 <div className="mt-16 w-56 text-sm tracking-tighter">
                   <p>
-                    송아지 가격과 지육 가격에 대한 시세 정보 및 한우산업 연간
-                    자료를 제공합니다.
+                    많은 시험 범위를 보기 편하게 요약한 핵심 노트처럼,
+                    한우사육과 시세에 영향을 줄 수 있는 이슈, 질병, 지원사업 등
+                    정보를 <br />
+                    편하고 쉽게 제공합니다.
                   </p>
                 </div>
               </div>
@@ -222,11 +204,12 @@ function IntroductionPage() {
         <div className="presentation-1 flex h-full flex-col">
           <FadeInSection>
             <article className=" flex h-full flex-1 flex-col items-center justify-end text-center font-bold">
-              <div className="mb-9 max-w-[38rem] animate-fade-in-up text-4xl font-bold leading-tight  tracking-[-1.13px;]  text-white">
-                지금 바로 당신의 농장에 <br /> 꼭 맞는 소를 구입해 보세요
+              <div className="mb-9 max-w-[50rem] animate-fade-in-up text-4xl font-bold leading-tight  tracking-[-1.13px;]  text-white">
+                우리 함께 보석같은
+                <br /> 송아지를 찾으러 가볼까요?
               </div>
               <div className=" mb-[10%] animate-fade-in-up cursor-pointer rounded-4xl bg-white px-[3.25rem] py-4 text-2xl font-bold tracking-[-0.59px] transition ease-in hover:bg-white/90">
-                <Link to="/cattle">우시장 정보센터 바로가기</Link>
+                <Link to="/cattle">출품우 정보 보러가기</Link>
               </div>
             </article>
           </FadeInSection>

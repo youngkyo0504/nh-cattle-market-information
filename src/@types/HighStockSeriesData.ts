@@ -1,6 +1,6 @@
 interface IHighStockSeriesData {
   thisYearData: number[][];
-  lastYearData?: number[][];
+  lastYearData: number[][];
 }
 
 export default IHighStockSeriesData;
